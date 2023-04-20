@@ -14,14 +14,31 @@ public class Room {
         this.key = key;
         this.type = type;
         this.light = light;
+        this.items = new ArrayList<String>();
     }
 
-    public getExit() {
-        
+    public String getExit() {
+        return this.exit;  
     }
 
+    public boolean getKey() {
+     return this.key;   
+    }
 
-    public toString() {
+    public String getType() {
+        return this.type;
+    }
 
+    public boolean getLight() {
+        return this.light;
+    }
+
+    public ArrayList <String> getItems() {
+        return this.items;
+    }
+
+    public String toString() {
+        String x = "This is a " + this.type + ". This room has " + this.items.size() + " objects; try to find the key within the objects.";
+        return x;
     }
 }
