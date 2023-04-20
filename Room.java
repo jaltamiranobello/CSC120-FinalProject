@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Room {
+    
     //attributes for basic room
     private String exit;
     private String code;
