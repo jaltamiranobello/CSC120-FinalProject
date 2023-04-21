@@ -15,7 +15,7 @@ public class Character {
         this.collected_items = new ArrayList<>();
         this.position = "South";
         this.held_items = new ArrayList<>();
-        this.room_location = ;
+        this.room_location = room_location;
     }
 
     public ArrayList<String> getNotes(){
