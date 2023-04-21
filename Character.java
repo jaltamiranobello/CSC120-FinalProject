@@ -9,7 +9,7 @@ public class Character {
     private ArrayList<String> held_items;
     private Room room_location;
 
-    public Character(String name, String position){
+    public Character(String name, String position, Room room_location){
         this.name = name;
         this.notes = new ArrayList<>();
         this.collected_items = new ArrayList<>();
@@ -98,7 +98,7 @@ public class Character {
         }
     }
 
-    
+
     public void examine(){
 
     }
