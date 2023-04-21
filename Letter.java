@@ -12,7 +12,7 @@ public class Letter {
         return this.text;
     }
 
-    public Object getFurniture(){
+    public Furniture getFurniture(){
         return this.furniture;
     }
 }
