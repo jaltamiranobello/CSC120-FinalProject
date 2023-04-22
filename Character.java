@@ -151,11 +151,16 @@ public class Character {
     }
 
     public void enterCode(Room room, String code){
-        if (code == room.getCode()){
-
-
+        try{
+            if (!code.equals(room.getCode())){
+                throw new RuntimeException("Wrong code try again...");
+            }
+            exit(room);
+            System.out.println(this.name + "Has exited " + room);
         }
-
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     public void enter(Room room){
