@@ -87,9 +87,8 @@ public class Character {
         }
     }
 
-    // Create letter class
     public void read(Letter l){
-
+        System.out.println(l.getText());
     }
 
     public void write(String note){
@@ -109,11 +108,6 @@ public class Character {
         catch(Exception e){
             System.out.println(e);
         }
-    }
-
-
-    public void examine(){
-
     }
 
     public void grab(String object){
@@ -157,10 +151,21 @@ public class Character {
     }
 
     public void enterCode(Room room, String code){
+<<<<<<< HEAD
         if (code == room.getCode()){
 
+=======
+        try{
+            if (!code.equals(room.getCode())){
+                throw new RuntimeException("Wrong code try again...");
+            }
+            exit(room);
+            System.out.println(this.name + "Has exited " + room);
         }
-
+        catch(Exception e){
+            System.out.println(e);
+>>>>>>> 4f4ead07789ffaa714ef4166cc1ca1fcfc1ada1b
+        }
     }
 
     public void enter(Room room){
