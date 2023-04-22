@@ -87,9 +87,8 @@ public class Character {
         }
     }
 
-    // Create letter class
     public void read(Letter l){
-
+        System.out.println(l.getText());
     }
 
     public void write(String note){
@@ -109,11 +108,6 @@ public class Character {
         catch(Exception e){
             System.out.println(e);
         }
-    }
-
-
-    public void examine(){
-
     }
 
     public void grab(String object){
