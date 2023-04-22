@@ -65,6 +65,7 @@ public class Character {
         }
     }
 
+    // create an item class and have an overloaded constructor in furniture either it has nothing only a letter, only an item, or both
     public void open(Furniture f){
         try {
             if (f.status == true){
