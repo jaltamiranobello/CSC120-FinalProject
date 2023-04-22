@@ -9,7 +9,7 @@ public class Character {
     private ArrayList<String> held_items;
     private Room room_location;
 
-    public Character(String name, String position, Room room_location){
+    public Character(String name, Room room_location){
         this.name = name;
         this.notes = new ArrayList<>();
         this.collected_items = new ArrayList<>();
@@ -65,6 +65,7 @@ public class Character {
         }
     }
 
+    // create an item class and have an overloaded constructor in furniture either it has nothing only a letter, only an item, or both
     public void open(Furniture f){
         try {
             if (f.status == true){
@@ -88,7 +89,7 @@ public class Character {
     }
 
     public void read(Letter l){
-
+        System.out.println(l.getText());
     }
 
     public void write(String note){
@@ -108,11 +109,6 @@ public class Character {
         catch(Exception e){
             System.out.println(e);
         }
-    }
-
-
-    public void examine(){
-        
     }
 
     public void grab(String object){
@@ -156,11 +152,16 @@ public class Character {
     }
 
     public void enterCode(Room room, String code){
-        if (code == room.getCode()){
-
-
+        try{
+            if (!code.equals(room.getCode())){
+                throw new RuntimeException("Wrong code try again...");
+            }
+            exit(room);
+            System.out.println(this.name + "Has exited " + room);
         }
-
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     public void enter(Room room){
@@ -177,7 +178,13 @@ public class Character {
     }
 
     public void exit(Room room){
-        if (room.getExit())
+        try{
+            if (!this.room_location.equals(room)){
+                throw new RuntimeException( this.name + " is not in the room so they cannot exit.");
+            }
+            System.out.println(this.name + " has left the " + room);
+        }catch(Exception e){
+        System.out.println(e); 
+     }
     }
-
 }
