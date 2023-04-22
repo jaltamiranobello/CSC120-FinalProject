@@ -64,14 +64,27 @@ public class Character {
             System.out.println(e);
         }
     }
-    // Hastable (object, location)
-    // Create a class for Furniture
-    public void open(String object){
 
+    public void open(Furniture f){
+        try {
+            if (f.status == true){
+                throw new RuntimeException(this.name + " can't open " + f.type + " because it is already open.");
+            }
+            f.status = true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
-    public void close(String object){
-
+    public void close(Furniture f){
+        try {
+            if (f.status == false){
+                throw new RuntimeException(this.name + " can't close " + f.type + " because it is already closed.");
+            }
+            f.status = false;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     // Create letter class
