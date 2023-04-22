@@ -5,16 +5,16 @@ public class Room {
     //attributes for basic room
     private String exit;
     private String code;
-    private String type;
+    //private String type;
     private boolean light;
-    private ArrayList<String> objects;
+    //private ArrayList<Furniture> objects;
     
-    public Room(String exit, String code, String type, boolean light) {
+    public Room(String exit, String code, boolean light) {
         this.exit = exit;
         this.code = code;
-        this.type = type;
+        //this.type = type;
         this.light = light;
-        this.objects = new ArrayList<String>();
+    //    this.objects = new ArrayList<>();
     }
 
     public String getExit() {
@@ -25,20 +25,20 @@ public class Room {
      return this.code;   
     }
 
-    public String getType() {
-        return this.type;
-    }
+    //public String getType() {
+    //    return this.type;
+    //}
 
     public boolean getLight() {
         return this.light;
     }
 
-    public ArrayList <String> getObjects() {
-        return this.objects;
-    }
+    //public ArrayList <Furniture> getObjects() {
+    //    return this.objects;
+    //}
 
-    public String toString() {
-        String x = "This is a " + this.type + ". This room has " + this.objects.size() + " objects; you can chose to retrieve some objects or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room.";
-        return x;
-    }
+    //public String toString() {
+    //    String x = "This is a " + this.type + ". This room has " + this.objects.size() + " objects; you can chose to retrieve some objects or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room.";
+    //    return x;
+   //}
 }

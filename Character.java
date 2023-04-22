@@ -152,21 +152,13 @@ public class Character {
     }
 
     public void turnLight(){
-        
+
     }
 
-    public void enterCode(Room room, String code){
-        try{
-            if (!code.equals(room.getCode())){
-                throw new RuntimeException("Wrong code try again...");
-            }
-            exit(room);
-            System.out.println(this.name + "Has exited " + room);
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
+    public void help(){
+        // type all the things they can do
     }
+
 
     public void enter(Room room){
         try{
@@ -192,4 +184,17 @@ public class Character {
         System.out.println(e); 
      }
     }
+
+    // public void enterCode(Room room, String code){
+    //     try{
+    //         if (!code.equals(room.getCode())){
+    //             throw new RuntimeException("Wrong code try again...");
+    //         }
+    //         exit(room);
+    //         System.out.println(this.name + "Has exited " + room);
+    //     }
+    //     catch(Exception e){
+    //         System.out.println(e);
+    //     }
+    // }
 }
