@@ -159,7 +159,6 @@ public class Character {
     public void enterCode(Room room, String code){
         if (code == room.getCode()){
 
-
         }
 
     }
@@ -178,7 +177,13 @@ public class Character {
     }
 
     public void exit(Room room){
-        if (room.getExit())
+        try{
+            if (!this.room_location.equals(room)){
+                throw new RuntimeException( this.name + " is not in the room so they cannot exit.");
+            }
+            System.out.println(this.name + " has left the " + room);
+        }catch(Exception e){
+        System.out.println(e); 
+     }
     }
-
 }
