@@ -151,6 +151,10 @@ public class Character {
 
     }
 
+    public void turnLight(){
+        
+    }
+
     public void enterCode(Room room, String code){
         try{
             if (!code.equals(room.getCode())){
@@ -177,12 +181,13 @@ public class Character {
 
     }
 
-    public void exit(Room room){
+    public void exit(Room room, Purgatory p){
         try{
             if (!this.room_location.equals(room)){
                 throw new RuntimeException( this.name + " is not in the room so they cannot exit.");
             }
             System.out.println(this.name + " has left the " + room);
+            p.nextRoom(this);
         }catch(Exception e){
         System.out.println(e); 
      }
