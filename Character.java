@@ -87,7 +87,6 @@ public class Character {
         }
     }
 
-    // Create letter class
     public void read(Letter l){
 
     }
@@ -113,7 +112,7 @@ public class Character {
 
 
     public void examine(){
-
+        
     }
 
     public void grab(String object){
