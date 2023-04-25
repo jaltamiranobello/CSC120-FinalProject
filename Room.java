@@ -6,7 +6,7 @@ public class Room {
     private String exit;
     private String code;
     //private String type;
-    private boolean light;
+    public boolean light;
     //private ArrayList<Furniture> objects;
     
     public Room(String exit, String code, boolean light) {
@@ -29,9 +29,9 @@ public class Room {
     //    return this.type;
     //}
 
-    public boolean getLight() {
-        return this.light;
-    }
+    // public boolean getLight() {
+    //     return this.light;
+    // }
 
     //public ArrayList <Furniture> getObjects() {
     //    return this.objects;
