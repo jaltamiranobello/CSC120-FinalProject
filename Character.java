@@ -65,13 +65,21 @@ public class Character {
         }
     }
 
-    // create an item class and have an overloaded constructor in furniture either it has nothing only a letter, only an item, or both
+    // Finish me !!!!!!
     public void open(Furniture f){
         try {
-            if (f.status == true){
-                throw new RuntimeException(this.name + " can't open " + f.type + " because it is already open.");
+            if (f.open_status == true){
+                throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is already open.");
             }
-            f.status = true;
+            else if (f.getLetter() == null) {
+                System.out.println("Hello");
+            }
+                //System.out.println(f.getLetter().getText());
+                //System.out.println("Hello");
+            
+            //f.open_status = true;
+            //System.out.println("This " + f.getType() + " has");
+            //System.out.println();
             //print out the items in there, there will be 1 letter and 2 items per room, all in a piece of furniture 
         } catch (Exception e) {
             System.out.println(e);
@@ -80,10 +88,10 @@ public class Character {
 
     public void close(Furniture f){
         try {
-            if (f.status == false){
-                throw new RuntimeException(this.name + " can't close " + f.type + " because it is already closed.");
+            if (f.open_status == false){
+                throw new RuntimeException(this.name + " can't close " + f.getType() + " because it is already closed.");
             }
-            f.status = false;
+            f.open_status = false;
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -208,4 +216,13 @@ public class Character {
     //         System.out.println(e);
     //     }
     // }
+
+    public static void main(String[] args) {
+        Room testr = new Room("Door", "Yourmom", false);
+        //Letter let = new Letter("Ypur mom is ugly");
+        Furniture fridge = new Furniture("Fridge");
+        Character stacy = new Character("stacy", testr);
+        stacy.open(fridge);
+
+    }
 }
