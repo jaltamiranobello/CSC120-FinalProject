@@ -72,6 +72,7 @@ public class Character {
                 throw new RuntimeException(this.name + " can't open " + f.type + " because it is already open.");
             }
             f.status = true;
+            //print out the items in there, there will be 1 letter and 2 items per room, all in a piece of furniture 
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -92,6 +93,7 @@ public class Character {
         System.out.println(l.getText());
     }
 
+    //make string note a scanner
     public void write(String note){
         this.notes.add(note);
         System.out.println(this.name + " has written " + note + "in their notebook.");
@@ -156,7 +158,7 @@ public class Character {
     }
 
     public void help(){
-        // type all the things they can do
+        System.out.println("The methods that are available for you to use to escape the room: enter(), exit(), walk(), open(), close(), read(), write(), viewnotes(), grab(), keep(), drop(), and turnLight().");
     }
 
 
