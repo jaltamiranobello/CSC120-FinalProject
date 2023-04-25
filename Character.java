@@ -195,6 +195,8 @@ public class Character {
 
     }
 
+    //create a new method about going backwards to a previous room
+
     public void enterCode(Room room, String code){
         try{
             if (!code.equals(room.getCode())){
