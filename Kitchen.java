@@ -1,14 +1,8 @@
 import java.util.*;
 public class Kitchen extends Room {
-<<<<<<< HEAD
-
-    private ArrayList<Furniture> objects;
-
-=======
     private ArrayList<Furniture> objects;
 
 
->>>>>>> 8d8b297deb9945efe8711f40832fca297572d1fb
     public Kitchen(String exit, String code, boolean light, Furniture a, Furniture b, Furniture c, Furniture d){
         super(exit, code, light);
         this.objects.add(a);
