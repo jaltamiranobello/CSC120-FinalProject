@@ -22,6 +22,8 @@ public class Purgatory {
         }
 
     public static void main(String[] args) {
+        Bedroom bedroom = new Bedroom("Door", "DOG", false, null, null, null, null);
+        Character stacy = new Character("Stacy, );
         Purgatory purgatory = new Purgatory();
             
     }

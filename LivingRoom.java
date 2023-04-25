@@ -2,8 +2,8 @@
 import java.util.*;
 
 public class LivingRoom extends Room {
+    
     private ArrayList<Furniture> objects;
-
 
     public LivingRoom(String exit, String code, boolean light, Furniture a, Furniture b, Furniture c, Furniture d){
         super(exit, code, light);
