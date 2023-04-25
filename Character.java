@@ -152,7 +152,16 @@ public class Character {
     }
 
     public void turnLight(){
+        try{
+            if (this.room_location.light == true){
+                throw new RuntimeException(this.name + " cannot turn on the light because it is already on.");
+            } System.out.println(this.name + " has turned on the light.");
+            this.room_location.light = true;
 
+        } catch(Exception e){
+            System.out.println(e);
+        }
+  
     }
 
     public void help(){
