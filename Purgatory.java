@@ -13,7 +13,7 @@ public class Purgatory {
         rooms.add(room);
     }
 
-    public void nextRoom(Character c){
+    public static void nextRoom(Character c){
         if (c.getCollectedItems().size() == 0){
 
         }

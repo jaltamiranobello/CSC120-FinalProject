@@ -4,6 +4,8 @@ public class Character {
 
     private String name;
     private ArrayList<String> notes;
+    // create multiple lists for each room or else letters will get too much
+    // or delete all the notes in that string before they enter a new room
     private ArrayList<String> collected_items;
     private String position;
     private ArrayList<String> held_items;
@@ -113,7 +115,7 @@ public class Character {
             throw new RuntimeException(this.name + " has no notes...");
             }
             for (int i = 0; i < this.notes.size(); i ++){
-                System.out.println(this.notes.get(i) + "\n");
+                System.out.println(this.notes.get(i));
             }
         }
         catch(Exception e){
@@ -134,6 +136,7 @@ public class Character {
         }
     }
 
+    //change object to special_item
     public void keep(String object){
         try{
             if (this.collected_items.contains(object)){
@@ -192,31 +195,33 @@ public class Character {
 
     }
 
-    public void exit(Room room, Purgatory p){
+    public void enterCode(Room room, String code){
+        try{
+            if (!code.equals(room.getCode())){
+                throw new RuntimeException("Wrong code try again...");
+            }
+            exit(room);
+            System.out.println(this.name + "Has exited " + room);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    //may or may not be wrong
+    public void exit(Room room){
         try{
             if (!this.room_location.equals(room)){
                 throw new RuntimeException( this.name + " is not in the room so they cannot exit.");
             }
             System.out.println(this.name + " has left the " + room);
-            p.nextRoom(this);
+            Purgatory.nextRoom(this);
         }catch(Exception e){
         System.out.println(e); 
      }
     }
 
-    // public void enterCode(Room room, String code){
-    //     try{
-    //         if (!code.equals(room.getCode())){
-    //             throw new RuntimeException("Wrong code try again...");
-    //         }
-    //         exit(room);
-    //         System.out.println(this.name + "Has exited " + room);
-    //     }
-    //     catch(Exception e){
-    //         System.out.println(e);
-    //     }
-    // }
-
+    
     public static void main(String[] args) {
         Room testr = new Room("Door", "Yourmom", false);
         //Letter let = new Letter("Ypur mom is ugly");
