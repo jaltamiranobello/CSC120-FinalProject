@@ -179,7 +179,7 @@ public class Character {
     }
 
     public void help(){
-        System.out.println("These are the following actions you can utilize to escape the rooms:\nEnter\nExit\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light");
+        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light\nExit");
     }
 
     // DO THIS!!!
@@ -217,7 +217,7 @@ public class Character {
     
     public static void main(String[] args) {
         Room testr = new Room("Door", "Yourmom", false);
-        //Letter let = new Letter("Ypur mom is ugly");
+        //Letter let = new Letter("Your mom is ugly");
         Furniture fridge = new Furniture("Fridge", "Locket");
         Character stacy = new Character("stacy", testr);
         stacy.open(fridge);
