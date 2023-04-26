@@ -1,6 +1,5 @@
 public class Furniture {
     
-    //attributes
     private String type;
     public boolean open_status;
     private Letter l;
@@ -21,6 +20,12 @@ public class Furniture {
         this.type = type;
         this.open_status = false;
         this.l = l;
+        this.special_item = special_item;
+    }
+
+    public Furniture(String type, String special_item) {
+        this.type = type;
+        this.open_status = false;
         this.special_item = special_item;
     }
 

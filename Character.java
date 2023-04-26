@@ -4,12 +4,10 @@ public class Character {
 
     private String name;
     private ArrayList<String> notes;
-    // create multiple lists for each room or else letters will get too much
-    // or delete all the notes in that string before they enter a new room
     private ArrayList<String> collected_items;
     private String position;
     private ArrayList<String> held_items;
-    private Room room_location;
+    public Room room_location;
 
     public Character(String name, Room room_location){
         this.name = name;
@@ -31,11 +29,6 @@ public class Character {
     public ArrayList<String> getHeldItems(){
         return this.held_items;
     }
-
-    public Room getRoomLocation(){
-        return this.room_location;
-    }
-
 
     public String getName(){
         return this.name;
@@ -67,23 +60,28 @@ public class Character {
         }
     }
 
-    // Finish me !!!!!!
     public void open(Furniture f){
         try {
             if (f.open_status == true){
                 throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is already open.");
             }
-            else if (f.getLetter() == null) {
-                System.out.println("Hello");
+            else if (f.getLetter() == null & f.getSpecialItem() == null) {
+                f.open_status = true;
+                System.out.println("This " + f.getType() + " has nothing inside");
             }
-                //System.out.println(f.getLetter().getText());
-                //System.out.println("Hello");
-            
-            //f.open_status = true;
-            //System.out.println("This " + f.getType() + " has");
-            //System.out.println();
-            //print out the items in there, there will be 1 letter and 2 items per room, all in a piece of furniture 
-        } catch (Exception e) {
+            else if (f.getLetter() != null & f.getSpecialItem() == null){
+                f.open_status = true;
+                System.out.println("This " + f.getType() + " has a letter inside. Maybe you want to read the letter, maybe you don't - your choice 😉...");
+            }
+            else if (f.getLetter() == null & f.getSpecialItem() != null){
+                f.open_status = true;
+                System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab or ignore it 😌.....");
+            }
+            else {
+                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to read the letter, maybe you want to grab or ignore the " + f.getSpecialItem() + "- your choice 😉");
+            } 
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -94,16 +92,17 @@ public class Character {
                 throw new RuntimeException(this.name + " can't close " + f.getType() + " because it is already closed.");
             }
             f.open_status = false;
-        } catch (Exception e) {
+            System.out.println(this.name + " closed " + f.getType() + ".");
+        }
+        catch (Exception e) {
             System.out.println(e);
         }
     }
 
     public void read(Letter l){
-        System.out.println(l.getText());
+        System.out.println("The letter states the following: " + l.getText());
     }
 
-    //make string note a scanner
     public void write(String note){
         this.notes.add(note);
         System.out.println(this.name + " has written " + note + "in their notebook.");
@@ -123,40 +122,40 @@ public class Character {
         }
     }
 
-    public void grab(String object){
+    public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
-                throw new RuntimeException(this.name + " is holding something in each hand, drop an object in order to grab another...");
+                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an item in order to pick up the " + special_item + ".");
             }
-            this.held_items.add(object);
-            System.out.println(this.name + " picked up a/an" + object);
+            this.held_items.add(special_item);
+            System.out.println(this.name + " picked up a/an" + special_item + ". Maybe you want to keep it or not 😈....");
         }
         catch(Exception e){
             System.out.println(e);
         }
     }
 
-    //change object to special_item
-    public void keep(String object){
+
+    public void keep(String special_item){
         try{
-            if (this.collected_items.contains(object)){
+            if (this.collected_items.contains(special_item)){
                 throw new RuntimeException(this.name + " already has this...");
             }
-            this.collected_items.add(object);
-            System.out.println(this.name + " kept the " + object);
+            this.collected_items.add(special_item);
+            System.out.println(this.name + " kept the " + special_item);
         }
         catch(Exception e){
             System.out.println(e);
         }
     }
 
-    public void drop(String object){
+    public void drop(String special_item){
         try{
-            if (this.held_items.contains(object) == false){
-                throw new RuntimeException(this.name + " cannot drop " + object + "because they are not holding it...");
+            if (this.held_items.contains(special_item) == false){
+                throw new RuntimeException(this.name + " cannot drop " + special_item + "because they are not holding it...");
             }
-            this.held_items.remove(object);
-            System.out.println(this.name + " has dropped " + object + ".");
+            this.held_items.remove(special_item);
+            System.out.println(this.name + " has dropped " + special_item + ".");
         }
         catch(Exception e){
             System.out.println(e);
@@ -168,34 +167,25 @@ public class Character {
         try{
             if (this.room_location.light == true){
                 throw new RuntimeException(this.name + " cannot turn on the light because it is already on.");
-            } System.out.println(this.name + " has turned on the light.");
+            } 
+            System.out.println(this.name + " has turned on the light.");
             this.room_location.light = true;
 
-        } catch(Exception e){
+        }
+        catch(Exception e){
             System.out.println(e);
         }
   
     }
 
     public void help(){
-        System.out.println("The methods that are available for you to use to escape the room: enter(), exit(), walk(), open(), close(), read(), write(), viewnotes(), grab(), keep(), drop(), and turnLight().");
+        System.out.println("These are the following actions you can utilize to escape the rooms:\nEnter\nExit\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light");
     }
 
-
-    public void enter(Room room){
-        try{
-            if (this.room_location.equals(room)){
-                throw new RuntimeException(this.name + " is already in this room...");
-            }
-            this.room_location = room;
-            System.out.println(this.name + " has entered " + room);
-        } catch(Exception e){
-            System.out.println(e);
-        }
+    // DO THIS!!!
+    public void goback(Room room){
 
     }
-
-    //create a new method about going backwards to a previous room
 
     public void enterCode(Room room, String code){
         try{
@@ -210,7 +200,7 @@ public class Character {
         }
     }
 
-    //may or may not be wrong
+
     public void exit(Room room){
         try{
             if (!this.room_location.equals(room)){
@@ -218,7 +208,8 @@ public class Character {
             }
             System.out.println(this.name + " has left the " + room);
             Purgatory.nextRoom(this);
-        }catch(Exception e){
+        }
+        catch(Exception e){
         System.out.println(e); 
      }
     }
@@ -227,9 +218,10 @@ public class Character {
     public static void main(String[] args) {
         Room testr = new Room("Door", "Yourmom", false);
         //Letter let = new Letter("Ypur mom is ugly");
-        Furniture fridge = new Furniture("Fridge");
+        Furniture fridge = new Furniture("Fridge", "Locket");
         Character stacy = new Character("stacy", testr);
         stacy.open(fridge);
+        //stacy.help();
 
     }
 }
