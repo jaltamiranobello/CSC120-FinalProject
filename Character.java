@@ -41,19 +41,22 @@ public class Character {
             }
             if (direction == "North"){
                 System.out.println(this.name + " moved towards the northern wall.");
-                //create code for changing the position 
+                this.position = direction;
             }
     
             else if (direction == "East"){
                 System.out.println(this.name + " moved towards the eastern wall.");
+                this.position = direction;
             }
     
             else if (direction == "South"){
                 System.out.println(this.name + " moved towards the southern wall.");
+                this.position = direction;
             }
     
             else if (direction == "West"){
                 System.out.println(this.name + " moved towards the western wall.");
+                this.position = direction;
             }
         }
         catch(Exception e){
