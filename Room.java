@@ -5,16 +5,12 @@ public class Room {
     //attributes for basic room
     private String exit;
     private String code;
-    //private String type;
     public boolean light;
-    //private ArrayList<Furniture> objects;
     
     public Room(String exit, String code, boolean light) {
         this.exit = exit;
         this.code = code;
-        //this.type = type;
         this.light = light;
-    //    this.objects = new ArrayList<>();
     }
 
     public String getExit() {

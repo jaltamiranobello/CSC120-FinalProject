@@ -41,6 +41,7 @@ public class Character {
             }
             if (direction == "North"){
                 System.out.println(this.name + " moved towards the northern wall.");
+                //create code for changing the position 
             }
     
             else if (direction == "East"){
@@ -216,12 +217,11 @@ public class Character {
 
     
     public static void main(String[] args) {
-        Room testr = new Room("Door", "Yourmom", false);
-        //Letter let = new Letter("Your mom is ugly");
+        Room testr = new Room("Door", "Obsesssion", false);
         Furniture fridge = new Furniture("Fridge", "Locket");
-        Character stacy = new Character("stacy", testr);
+        Character stacy = new Character("Stacy", testr);
         stacy.open(fridge);
-        //stacy.help();
+        stacy.help();
 
     }
 }
