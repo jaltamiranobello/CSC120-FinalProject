@@ -8,6 +8,7 @@ public class Character {
     private String position;
     private ArrayList<String> held_items;
     public Room room_location;
+    public ArrayList<Room> room_history;
 
     public Character(String name, Room room_location){
         this.name = name;
@@ -40,23 +41,24 @@ public class Character {
                 throw new RuntimeException(this.name + " is already here.");
             }
             if (direction == "North"){
+                this.position = "North";
                 System.out.println(this.name + " moved towards the northern wall.");
-                this.position = direction;
             }
     
             else if (direction == "East"){
+                this.position = "East";
                 System.out.println(this.name + " moved towards the eastern wall.");
-                this.position = direction;
+
             }
     
             else if (direction == "South"){
+                this.position = "South";
                 System.out.println(this.name + " moved towards the southern wall.");
-                this.position = direction;
             }
     
             else if (direction == "West"){
+                this.position = "West";
                 System.out.println(this.name + " moved towards the western wall.");
-                this.position = direction;
             }
         }
         catch(Exception e){
@@ -188,6 +190,15 @@ public class Character {
 
     // DO THIS!!!
     public void goback(Room room){
+        try {
+            if (this.room_location  == room){
+                throw new RuntimeException(this.name + " is already here.");
+            }
+            // the room_history list in for each room and check only the last index to be able to go back 
+            else if (this.room_history.contains(room)) {
+
+            }
+        }
 
     }
 
