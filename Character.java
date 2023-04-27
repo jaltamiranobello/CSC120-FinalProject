@@ -198,6 +198,8 @@ public class Character {
             else if (this.room_history.contains(room)) {
 
             }
+        } catch(Exception e){
+            System.out.println(e);
         }
 
     }
