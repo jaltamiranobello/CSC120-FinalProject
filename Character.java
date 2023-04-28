@@ -17,6 +17,7 @@ public class Character {
         this.position = "South";
         this.held_items = new ArrayList<>();
         this.room_location = room_location;
+        this.room_history.add(room_location);
     }
 
     public ArrayList<String> getNotes(){
@@ -185,52 +186,27 @@ public class Character {
     }
 
     public void help(){
-        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light\nExit");
+        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light");
     }
 
-    // DO THIS!!!
-    public void goback(Room room){
-        try {
-            if (this.room_location  == room){
-                throw new RuntimeException(this.name + " is already here.");
-            }
-            // the room_history list in for each room and check only the last index to be able to go back 
-            else if (this.room_history.contains(room)) {
-
-            }
-        } catch(Exception e){
-            System.out.println(e);
-        }
-
+    public void goback(){
+       Room prev_room =  this.room_history.get(this.room_history.size() -1);
+       this.room_location = prev_room;
+       System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
     }
 
-    public void enterCode(Room room, String code){
+    public void enterCode(String code){
         try{
-            if (!code.equals(room.getCode())){
+            if (!code.equals(this.room_location.getCode())){
                 throw new RuntimeException("Wrong code try again...");
             }
-            exit(room);
-            System.out.println(this.name + "Has exited " + room);
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-    }
-
-
-    public void exit(Room room){
-        try{
-            if (!this.room_location.equals(room)){
-                throw new RuntimeException( this.name + " is not in the room so they cannot exit.");
-            }
-            System.out.println(this.name + " has left the " + room);
+            System.out.println("The code is correcte " + this.name + " has left the room and entered a new room." );
             Purgatory.nextRoom(this);
         }
         catch(Exception e){
-        System.out.println(e); 
-     }
+            System.out.println(e);
+        }
     }
-
     
     public static void main(String[] args) {
         Room testr = new Room("Door", "Obsesssion", false);

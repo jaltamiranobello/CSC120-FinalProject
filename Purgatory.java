@@ -2,7 +2,18 @@ import java.util.*;
 
 public class Purgatory {
     ArrayList<Room> rooms;
-    
+    // String exit, String code, boolean light, Furniture a, Furniture b, Furniture c, Furniture d
+    Bedroom bedroom = new Bedroom("Door", "");
+    Toyroom toyroom_easy = new Toyroom();
+    Toyroom toyroom_med = new Toyroom();
+    Toyroom toyroom_hard = new Toyroom();
+    Kitchen kitchen_easy = new Kitchen();
+    Kitchen kitchen_med = new Kitchen();
+    Kitchen kitchen_hard = new Kitchen();
+    Bathroom bathroom_easy = new Bathroom();
+    Bathroom bathroom_med = new Bathroom();
+    Bathroom bathroom_hard = new Bathroom();
+    LivingRoom livingRoom = new LivingRoom();
 
     public Purgatory(){
         rooms = new ArrayList<>();
@@ -12,23 +23,9 @@ public class Purgatory {
         rooms.add(room);
     }
 
-    public void enter(Character c, Room room){
-        try{
-            if (c.room_location.equals(room)){
-                throw new RuntimeException(c.getName() + " is already in this room...");
-            }
-            c.room_location = room;
-            c.room_history.add(room);
-            System.out.println(c.getName() + " has entered " + room);
-        } catch(Exception e){
-            System.out.println(e);
-        }
-
-    }
 
     public static void nextRoom(Character c){
         if (c.getCollectedItems().size() == 0){
-
         }
 
 
