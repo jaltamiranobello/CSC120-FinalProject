@@ -5,59 +5,59 @@ public class Purgatory {
     ArrayList<Room> rooms;
 
     Letter lbd_1 = new Letter(null);
-    Letter lbd_2 = new Letter();
-    Letter lbd_3 = new Letter();
-    Letter lbd_4 = new Letter();
+    // Letter lbd_2 = new Letter();
+    // Letter lbd_3 = new Letter();
+    // Letter lbd_4 = new Letter();
 
-    Letter lt_e_1 = new Letter();
-    Letter lt_e_2 = new Letter();
-    Letter lt_e_3 = new Letter();
-    Letter lt_e_4 = new Letter();
+    // Letter lt_e_1 = new Letter();
+    // Letter lt_e_2 = new Letter();
+    // Letter lt_e_3 = new Letter();
+    // Letter lt_e_4 = new Letter();
 
-    Letter lt_m_1 = new Letter();
-    Letter lt_m_2 = new Letter();
-    Letter lt_m_3 = new Letter();
-    Letter lt_m_4 = new Letter();
+    // Letter lt_m_1 = new Letter();
+    // Letter lt_m_2 = new Letter();
+    // Letter lt_m_3 = new Letter();
+    // Letter lt_m_4 = new Letter();
 
-    Letter lt_h_1 = new Letter();
-    Letter lt_h_2 = new Letter();
-    Letter lt_h_3 = new Letter();
-    Letter lt_h_4 = new Letter();
+    // Letter lt_h_1 = new Letter();
+    // Letter lt_h_2 = new Letter();
+    // Letter lt_h_3 = new Letter();
+    // Letter lt_h_4 = new Letter();
 
-    Letter lk_e_1 = new Letter();
-    Letter lk_e_2 = new Letter();
-    Letter lk_e_3 = new Letter();
-    Letter lk_e_4 = new Letter();
+    // Letter lk_e_1 = new Letter();
+    // Letter lk_e_2 = new Letter();
+    // Letter lk_e_3 = new Letter();
+    // Letter lk_e_4 = new Letter();
 
-    Letter lk_m_1 = new Letter();
-    Letter lk_m_2 = new Letter();
-    Letter lk_m_3 = new Letter();
-    Letter lk_m_4 = new Letter();
+    // Letter lk_m_1 = new Letter();
+    // Letter lk_m_2 = new Letter();
+    // Letter lk_m_3 = new Letter();
+    // Letter lk_m_4 = new Letter();
 
-    Letter lk_h_1 = new Letter();
-    Letter lk_h_2 = new Letter();
-    Letter lk_h_3 = new Letter();
-    Letter lk_h_4 = new Letter();
+    // Letter lk_h_1 = new Letter();
+    // Letter lk_h_2 = new Letter();
+    // Letter lk_h_3 = new Letter();
+    // Letter lk_h_4 = new Letter();
 
-    Letter lb_e_1 = new Letter();
-    Letter lb_e_2 = new Letter();
-    Letter lb_e_3 = new Letter();
-    Letter lb_e_4 = new Letter();
+    // Letter lb_e_1 = new Letter();
+    // Letter lb_e_2 = new Letter();
+    // Letter lb_e_3 = new Letter();
+    // Letter lb_e_4 = new Letter();
 
-    Letter lb_m_1 = new Letter();
-    Letter lb_m_2 = new Letter();
-    Letter lb_m_3 = new Letter();
-    Letter lb_m_4 = new Letter();
+    // Letter lb_m_1 = new Letter();
+    // Letter lb_m_2 = new Letter();
+    // Letter lb_m_3 = new Letter();
+    // Letter lb_m_4 = new Letter();
 
-    Letter lb_h_1 = new Letter();
-    Letter lb_h_2 = new Letter();
-    Letter lb_h_3 = new Letter();
-    Letter lb_h_4 = new Letter();
+    // Letter lb_h_1 = new Letter();
+    // Letter lb_h_2 = new Letter();
+    // Letter lb_h_3 = new Letter();
+    // Letter lb_h_4 = new Letter();
 
-    Letter llr_1 = new Letter();
-    Letter llr_2 = new Letter();
-    Letter llr_3 = new Letter();
-    Letter llr_4 = new Letter();
+    // Letter llr_1 = new Letter();
+    // Letter llr_2 = new Letter();
+    // Letter llr_3 = new Letter();
+    // Letter llr_4 = new Letter();
 
     Furniture bd_1 = new Furniture("Bedside Table");
     Furniture bd_2 = new Furniture("Drawer");
