@@ -209,7 +209,7 @@ public class Character {
     }
     
     public static void main(String[] args) {
-        Room testr = new Room("Door", "Obsesssion", false);
+        Room testr = new Room("Door", "Obsesssion");
         Furniture fridge = new Furniture("Fridge", "Locket");
         Character stacy = new Character("Stacy", testr);
         stacy.open(fridge);

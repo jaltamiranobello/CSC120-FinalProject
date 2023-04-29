@@ -7,10 +7,10 @@ public class Room {
     private String code;
     public boolean light;
     
-    public Room(String exit, String code, boolean light) {
+    public Room(String exit, String code) {
         this.exit = exit;
         this.code = code;
-        this.light = light;
+        this.light = false;
     }
 
     public String getExit() {
