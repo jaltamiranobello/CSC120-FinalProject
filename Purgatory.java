@@ -164,7 +164,6 @@ public class Purgatory {
             c.room_location = livingRoom;
             System.out.println(c.getName() + " is now in a Living Room. " + livingRoom.toString());
         }
-
         } 
 
     public static void main(String[] args) {
