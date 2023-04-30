@@ -148,20 +148,6 @@ public class Character {
         }
     }
 
-
-    // public void keep(String special_item){
-    //     try{
-    //         if (this.collected_items.contains(special_item)){
-    //             throw new RuntimeException(this.name + " already has this...");
-    //         }
-    //         this.collected_items.add(special_item);
-    //         System.out.println(this.name + " kept the " + special_item);
-    //     }
-    //     catch(Exception e){
-    //         System.out.println(e);
-    //     }
-    // }
-
     public void keep(String special_item){
         try{
             if (this.collected_items.contains(special_item)){

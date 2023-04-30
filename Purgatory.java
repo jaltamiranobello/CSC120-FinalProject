@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Purgatory {
+    
     ArrayList<Room> rooms;
     Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
