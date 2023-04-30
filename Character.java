@@ -4,7 +4,14 @@ public class Character {
 
     private String name;
     private ArrayList<String> notes;
-    private ArrayList<String> collected_items;
+
+    public ArrayList<String> collected_items;
+    public ArrayList<String> collected_items_bd;
+    public ArrayList<String> collected_items_tyr;
+    public ArrayList<String> collected_items_kch;
+    public ArrayList<String> collected_items_bth;
+    public ArrayList<String> collected_items_lr;
+
     private String position;
     private ArrayList<String> held_items;
     public Room room_location;
@@ -13,20 +20,19 @@ public class Character {
     public Character(String name, Room room_location){
         this.name = name;
         this.notes = new ArrayList<>();
-        this.collected_items = new ArrayList<>();
+        //this.collected_items = new ArrayList<>();
         this.position = "South";
         this.held_items = new ArrayList<>();
         this.room_location = room_location;
-        this.room_history.add(room_location);
     }
 
     public ArrayList<String> getNotes(){
         return this.notes;
     }
 
-    public ArrayList<String> getCollectedItems(){
-        return this.collected_items;
-    }
+    // public ArrayList<String> getCollectedItems(){
+    //     return this.collected_items;
+    // }
 
     public ArrayList<String> getHeldItems(){
         return this.held_items;
@@ -143,15 +149,65 @@ public class Character {
     }
 
 
+    // public void keep(String special_item){
+    //     try{
+    //         if (this.collected_items.contains(special_item)){
+    //             throw new RuntimeException(this.name + " already has this...");
+    //         }
+    //         this.collected_items.add(special_item);
+    //         System.out.println(this.name + " kept the " + special_item);
+    //     }
+    //     catch(Exception e){
+    //         System.out.println(e);
+    //     }
+    // }
+
     public void keep(String special_item){
         try{
             if (this.collected_items.contains(special_item)){
                 throw new RuntimeException(this.name + " already has this...");
             }
-            this.collected_items.add(special_item);
-            System.out.println(this.name + " kept the " + special_item);
-        }
-        catch(Exception e){
+            else if(this.room_location instanceof Bedroom & this.collected_items_bd.size() == 2){
+                throw new RuntimeException(this.name + " can no longer keep special items from bedroom. She has reached the BEDROOM's item capacity.");
+            }
+            else if(this.room_location instanceof Toyroom & this.collected_items_tyr.size() == 2){
+                throw new RuntimeException(this.name + " can no longer keep special items from toyroom. She has reached the TOYROOM's item capacity.");
+            }
+            else if(this.room_location instanceof Kitchen & this.collected_items_kch.size() == 2){
+                throw new RuntimeException(this.name + " can no longer keep special items from kitchen. She has reached the KITCHEN's item capacity.");
+            }
+            else if(this.room_location instanceof Bathroom & this.collected_items_bth.size() == 2){
+                throw new RuntimeException(this.name + " can no longer keep special items from bathroom. She has reached the BATHROOM's capacity.");
+            }
+            else if(this.room_location instanceof LivingRoom & this.collected_items_lr.size() == 2){
+                throw new RuntimeException(this.name + " can no longer keep special items from living room. She has reached the LIVING ROOM's capacity.");
+            }
+            else if(this.room_location instanceof Bedroom){
+                this.collected_items_bd.add(special_item);
+                this.collected_items.add(special_item);
+                System.out.println(this.name + " kept the " + special_item);
+            }
+            else if(this.room_location instanceof Toyroom){
+                this.collected_items_tyr.add(special_item);
+                this.collected_items.add(special_item);
+                System.out.println(this.name + " kept the " + special_item);
+            }
+            else if(this.room_location instanceof Kitchen){
+                this.collected_items_kch.add(special_item);
+                this.collected_items.add(special_item);
+                System.out.println(this.name + " kept the " + special_item);
+            }
+            else if(this.room_location instanceof Bathroom){
+                this.collected_items_bth.add(special_item);
+                this.collected_items.add(special_item);
+                System.out.println(this.name + " kept the " + special_item);
+            }
+            else if(this.room_location instanceof LivingRoom){
+                this.collected_items_lr.add(special_item);
+                this.collected_items.add(special_item);
+                System.out.println(this.name + " kept the " + special_item);
+            }
+        } catch(Exception e){
             System.out.println(e);
         }
     }
@@ -167,7 +223,6 @@ public class Character {
         catch(Exception e){
             System.out.println(e);
         }
-
     }
 
     public void turnLight(){
@@ -182,18 +237,17 @@ public class Character {
         catch(Exception e){
             System.out.println(e);
         }
-  
     }
 
     public void help(){
-        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light");
+        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light\nExit");
     }
 
     public void goback(){
-       Room prev_room =  this.room_history.get(this.room_history.size() -1);
-       this.room_location = prev_room;
-       System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
-    }
+        Room prev_room =  this.room_history.get(this.room_history.size() -1);
+        this.room_location = prev_room;
+        System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
+     }
 
     public void enterCode(String code){
         try{
