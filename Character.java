@@ -20,7 +20,6 @@ public class Character {
     public Character(String name, Room room_location){
         this.name = name;
         this.notes = new ArrayList<>();
-        //this.collected_items = new ArrayList<>();
         this.position = "South";
         this.held_items = new ArrayList<>();
         this.room_location = room_location;
@@ -29,10 +28,6 @@ public class Character {
     public ArrayList<String> getNotes(){
         return this.notes;
     }
-
-    // public ArrayList<String> getCollectedItems(){
-    //     return this.collected_items;
-    // }
 
     public ArrayList<String> getHeldItems(){
         return this.held_items;

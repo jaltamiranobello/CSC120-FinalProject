@@ -1,9 +1,8 @@
 import java.util.*;
 
 public class Purgatory {
-    
-    ArrayList<Room> rooms;
-    Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
+
+    public Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
     Letter lbd_4 = new Letter("IZE are the last three letters of the code.");
@@ -59,62 +58,62 @@ public class Purgatory {
     Letter llr_4 = new Letter("E is the last letter of the code.");
 
     Furniture bd_1 = new Furniture("Desk", lbd_1);
-    Furniture bd_2 = new Furniture("Nightstand", lbd_2);
+    Furniture bd_2 = new Furniture("Nightstand", lbd_2, "Binoculars");
     Furniture bd_3 = new Furniture("Dresser", lbd_3);
-    Furniture bd_4 =  new Furniture("Closet", lbd_3);
+    Furniture bd_4 =  new Furniture("Closet", lbd_3, "Phone");
 
-    Furniture t_easy_1 =  new Furniture("Toy Chest", lt_e_1);
+    Furniture t_easy_1 =  new Furniture("Toy Chest", lt_e_1, "Lily's Schedule");
     Furniture t_easy_2 =  new Furniture("Barbie House", lt_e_2);
-    Furniture t_easy_3 =  new Furniture("Craft Table", lt_e_3);
+    Furniture t_easy_3 =  new Furniture("Craft Table", lt_e_3, "Teddy bear");
     Furniture t_easy_4 =  new Furniture("Lego Box", lt_e_4);
 
     Furniture t_med_1 =  new Furniture("Toy Chest", lt_m_1);
     Furniture t_med_2 =  new Furniture("Barbie House", lt_m_2);
-    Furniture t_med_3 = new Furniture("Craft Table", lt_m_3);
-    Furniture t_med_4 =  new Furniture("Lego Box", lt_m_4);
+    Furniture t_med_3 = new Furniture("Craft Table", lt_m_3, "Lipstick");
+    Furniture t_med_4 =  new Furniture("Lego Box", lt_m_4, "Toy Camera");
 
-    Furniture t_hard_1 =  new Furniture("Toy Chest", lt_h_1);
-    Furniture t_hard_2 =  new Furniture("Barbie House", lt_h_2);
+    Furniture t_hard_1 =  new Furniture("Toy Chest", lt_h_1, "Flowers");
+    Furniture t_hard_2 =  new Furniture("Barbie House", lt_h_2, "Locket");
     Furniture t_hard_3 = new Furniture("Craft Table", lt_h_3);
     Furniture t_hard_4 =  new Furniture("Lego Box", lt_h_4);
 
     Furniture k_easy_1 =  new Furniture("Dishwasher", lk_e_1);
-    Furniture k_easy_2 =  new Furniture("Microwave", lk_e_2);
-    Furniture k_easy_3 =  new Furniture("Oven", lk_e_3);
+    Furniture k_easy_2 =  new Furniture("Microwave", lk_e_2, "Medicine Pamphlet");
+    Furniture k_easy_3 =  new Furniture("Oven", lk_e_3, "Bowl with traces of unknown substance");
     Furniture k_easy_4 =  new Furniture("Pantry", lk_e_4);
 
     Furniture k_med_1 =  new Furniture("Dishwasher", lk_m_1);
-    Furniture k_med_2 =  new Furniture("Microwave", lk_m_2);
-    Furniture k_med_3 =  new Furniture("Oven", lk_m_3);
+    Furniture k_med_2 =  new Furniture("Microwave", lk_m_2, "Cake");
+    Furniture k_med_3 =  new Furniture("Oven", lk_m_3, "Pharmacy Card");
     Furniture k_med_4 =  new Furniture("Pantry", lk_m_4);
 
-    Furniture k_hard_1 =  new Furniture("Dishwasher", lk_h_1);
-    Furniture k_hard_2 =  new Furniture("Microwave", lk_h_1);
+    Furniture k_hard_1 =  new Furniture("Dishwasher", lk_h_1, "Tea Cup");
+    Furniture k_hard_2 =  new Furniture("Microwave", lk_h_1, "Purse");
     Furniture k_hard_3 =  new Furniture("Oven", lk_h_1);
     Furniture k_hard_4 =  new Furniture("Pantry", lk_h_1);
 
     Furniture b_easy_1 =  new Furniture("Toilet", lb_e_1);
-    Furniture b_easy_2 =  new Furniture("Medicine Cabinet", lb_e_2);
+    Furniture b_easy_2 =  new Furniture("Medicine Cabinet", lb_e_2, "Hair Pin");
     Furniture b_easy_3 =  new Furniture("Trash Can", lb_e_3);
-    Furniture b_easy_4 =  new Furniture("Shower", lb_e_4);
+    Furniture b_easy_4 =  new Furniture("Shower", lb_e_4, "Medicine Bottle");
 
-    Furniture b_med_1 =  new Furniture("Toilet", lb_m_1);
-    Furniture b_med_2 =  new Furniture("Medicine Cabinet", lb_m_2);
+    Furniture b_med_1 =  new Furniture("Toilet", lb_m_1, "Pills");
+    Furniture b_med_2 =  new Furniture("Medicine Cabinet", lb_m_2, "Necklace");
     Furniture b_med_3 =  new Furniture("Trash Can", lb_m_3);
     Furniture b_med_4 = new Furniture("Shower", lb_m_4);
 
-    Furniture b_hard_1 =  new Furniture("Toilet", lb_h_1);
-    Furniture b_hard_2 =  new Furniture("Medicine Cabinet", lb_h_2);
+    Furniture b_hard_1 =  new Furniture("Toilet", lb_h_1, "Straightener");
+    Furniture b_hard_2 =  new Furniture("Medicine Cabinet", lb_h_2, "Hairbrush");
     Furniture b_hard_3 =  new Furniture("Trash Can", lb_h_3);
     Furniture b_hard_4 = new Furniture("Shower", lb_h_4);
 
-    Furniture lr_1 =  new Furniture("Coffee Table", llr_1);
-    Furniture lr_2 =  new Furniture("Safe", llr_2);
+    Furniture lr_1 =  new Furniture("Coffee Table", llr_1, "Picture of Lily");
+    Furniture lr_2 =  new Furniture("Safe", llr_2, "Glass Vase Shard");
     Furniture lr_3 =  new Furniture("China Cabinet", llr_3);
     Furniture lr_4 =  new Furniture("Bookshelf", llr_4);
 
     Bedroom bedroom = new Bedroom("Door", "ROMANTICIZE", bd_1, bd_2, bd_3, bd_4);
-    Toyroom toyroom_easy = new Toyroom("Door", "OBSESSION", t_easy_1, t_easy_2, t_easy_3, t_easy_4);
+    public static Toyroom toyroom_easy = new Toyroom("Door", "OBSESSION", t_easy_1, t_easy_2, t_easy_3, t_easy_4);
     Toyroom toyroom_med = new Toyroom("Window", "INTEREST", t_med_1, t_med_2, t_med_3, t_med_4);
     Toyroom toyroom_hard = new Toyroom("Vent", "ENDEARMENT", t_hard_1, t_hard_2, t_hard_3, t_hard_4);
     Kitchen kitchen_easy = new Kitchen("Door", "POISON", k_easy_1, k_easy_2, k_easy_3, k_easy_4);
@@ -126,19 +125,19 @@ public class Purgatory {
     LivingRoom livingRoom = new LivingRoom("Door", "ALONE", lr_1, lr_2, lr_3, lr_4);
 
     public Purgatory(){
-        rooms = new ArrayList<>();
+        
     }
 
-    public void addRooms(Room room){
-        rooms.add(room);
     }
 
 
     public static void nextRoom(Character c){
-        if (c.getCollectedItems().size() == 0){
+        if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 0) {
+            c.room_location = toyroom_easy;
         }
+        else if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 1) {
 
-
+        }
         }
 
     public static void main(String[] args) {
