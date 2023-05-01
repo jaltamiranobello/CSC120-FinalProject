@@ -1,5 +1,4 @@
 public class Purgatory {
-
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     public static Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     public static Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
@@ -125,44 +124,50 @@ public class Purgatory {
 
     public static void nextRoom(Character c){
         if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 0) {
-            c.room_location = toyroom_easy;
-            System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_easy.toString());
+            c.room_location = toyroom_hard;
+            System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_hard.toString());
         }
         else if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 1) {
             c.room_location = toyroom_med;
             System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_med.toString());
         }
         else if (c.room_location instanceof Bedroom & c.collected_items_bd.size() == 2) {
-            c.room_location = toyroom_hard;
-            System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_hard.toString());
+            c.room_location = toyroom_easy;
+            System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_easy.toString());
         }
-        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() <= 2) {
+        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 2) {
             c.room_location = kitchen_easy;
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_easy.toString());
         }
-        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() >= 1 & c.collected_items_tyr.size() <= 3) {
+        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 1) {
             c.room_location = kitchen_med;
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_med.toString());
         }
-        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() >= 2 & c.collected_items_tyr.size() <= 4) {
+        else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 0) {
             c.room_location = kitchen_hard;
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_hard.toString());
         }
-        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() <= 4) {
+        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 2) {
             c.room_location = bathroom_easy;
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_easy.toString());
         }
-        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() >= 1 & c.collected_items_kch.size() <= 5) {
+        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 1) {
             c.room_location = bathroom_med;
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_med.toString());
         }
-        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() >= 2 & c.collected_items_kch.size() <= 6) {
+        else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 0) {
             c.room_location = bathroom_hard;
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_hard.toString());
         }
         else if (c.room_location instanceof Bathroom) {
             c.room_location = livingRoom;
             System.out.println(c.getName() + " is now in a Living Room. " + livingRoom.toString());
+        }
+        else if(c.room_location instanceof LivingRoom & c.collected_items.size() < 8){
+            System.out.println(c.getName() + " has failed to understand the purpose of Purgatory. " + c.getName() + " has woken up in the initial room again...");
+        }
+        else if(c.room_location instanceof LivingRoom & c.collected_items.size() >= 8 ){
+            System.out.println(c.getName() + " has understood the purpose of Purgatory.\n" + c.getName() + " is in Purgatory because one day she felt extremely lonely and saw the future love of her life, Lily, outside of her window.\nShe became entraced by her beauty and soon became obsessed to the point of stalking Lily to get close to her.\nThrough her stalking, she was able to get hired by Lily's brother to babysit Lily's niece at Lily's house.\nWeeks later, they have a date at " + c.getName() + "'s house.\nShe poisoned a cake so Lily can get sick and would have to rely on her.\nShe made Lily feel safe and asked Lily to stay over so she can take care of her.\nEventually, the truth revealed itself and then Lily became infuriated and attempted to run away.\n" + c.getName() + ", without thinking, ends up killing Lily with a glass shard from a flower vase so that no one else can ever have her.\nThen she poisoned herself because life is no longer worth living without Lily.\n" + c.getName() + " is now in the game Purgatory to repent her sins and reflect on her actions.");
         }
         } 
 

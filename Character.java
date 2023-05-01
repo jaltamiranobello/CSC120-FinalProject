@@ -235,7 +235,7 @@ public class Character {
             if (!code.equals(this.room_location.getCode())){
                 throw new RuntimeException("Wrong code try again...");
             }
-            System.out.println("The code is correcte " + this.name + " has left the room and entered a new room." );
+            System.out.println("The code is correct." + this.name + " has left the room." );
             Purgatory.nextRoom(this);
         }
         catch(Exception e){
