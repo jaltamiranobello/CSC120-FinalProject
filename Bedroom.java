@@ -6,6 +6,7 @@ public class Bedroom extends Room {
 
     public Bedroom(String exit, String code, Furniture a, Furniture b, Furniture c, Furniture d){
         super(exit, code);
+        this.objects = new ArrayList<Furniture>();
         this.objects.add(a);
         this.objects.add(b);
         this.objects.add(c);
@@ -17,7 +18,7 @@ public class Bedroom extends Room {
     }
 
     public String toString() {
-       String x = "This is a bedroom and it has " + this.objects.size() + " pieces of furniture; you can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit.";
+       String x = "\nThis is a bedroom and it has " + this.objects.size() + " pieces of furniture; you can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room.";
        return x;
     }
 }
