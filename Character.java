@@ -123,8 +123,9 @@ public class Character {
 
 
     public void read(){
-        try{if(this.current_letter.getText()== "N/A"){
-            throw new RuntimeException(this.name+ " has yet to pick up a letter.");
+        try{
+            if(this.current_letter.getText()== "N/A"){
+                throw new RuntimeException(this.name+ " has yet to pick up a letter.");
         }
         System.out.println("The letter states the following: " + this.current_letter.getText());
     }
@@ -164,6 +165,7 @@ public class Character {
             System.out.println(e);
         }
     }
+
     public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
