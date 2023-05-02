@@ -177,23 +177,51 @@ public class Purgatory {
         } 
 
         public static void nearMe(Character c){
-            if (c.room_location == bedroom){
+            if (c.room_location instanceof Bedroom){
                 if (c.position == "North"){
                     System.out.println("There is a desk here.");
                 }
                 else if(c.position == "South") {
-
+                    System.out.println("There is a nightstand here.");
                 }
                 else if(c.position == "East"){
-
+                    System.out.println("There is a dresser here.");
                 }
                 else if(c.position == "West"){
-
+                    System.out.println("There is a closet here.");
                 }
             }
-            else if (){
+            else if (c.room_location instanceof Toyroom){
+                if (c.position == "North"){
+                    System.out.println("There is a toychest here.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a Barbie house here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a craft table here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a Lego box here.");
+                }
 
             }
+            else if (c.room_location instanceof LivingRoom){
+                if (c.position == "North"){
+                    System.out.println("There is coffee table.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a safe here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a china cabinet here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a bookshelf.");
+                }
+
+            }
+
         }
 
 
