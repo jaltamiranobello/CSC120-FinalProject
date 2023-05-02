@@ -291,7 +291,7 @@ public class Character {
     }
     
     public static void main(String[] args) {
-        Room testr = new Room("Door", "Obsesssion");
+        Room testr = new Room("Door", "OBSESSION");
         Furniture fridge = new Furniture("Fridge", "Locket");
         Character stacy = new Character("Stacy", testr);
         stacy.open(fridge);
