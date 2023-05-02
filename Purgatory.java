@@ -174,7 +174,7 @@ public class Purgatory {
 
 
     public static void main(String[] args) {
-        //Purgatory theGame = new Purgatory();
+        //Purgatory purgatory = new Purgatory();
             
     }
 
