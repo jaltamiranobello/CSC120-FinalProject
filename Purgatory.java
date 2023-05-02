@@ -55,60 +55,60 @@ public class Purgatory {
     public static Letter llr_3 = new Letter("N is the fourth letter of the code.");
     public static Letter llr_4 = new Letter("E is the last letter of the code.");
 
-    public static Furniture bd_1 = new Furniture("Desk", lbd_1);
-    public static Furniture bd_2 = new Furniture("Nightstand", lbd_2, "Binoculars");
-    public static Furniture bd_3 = new Furniture("Dresser", lbd_3);
-    public static Furniture bd_4 =  new Furniture("Closet", lbd_3, "Phone");
+    public static Furniture bd_1 = new Furniture("Desk", "North", lbd_1);
+    public static Furniture bd_2 = new Furniture("Nightstand", "South",lbd_2, "Binoculars");
+    public static Furniture bd_3 = new Furniture("Dresser","East", lbd_3);
+    public static Furniture bd_4 =  new Furniture("Closet", "West", lbd_3, "Phone");
 
-    public static Furniture t_easy_1 =  new Furniture("Toy Chest", lt_e_1, "Lily's Schedule");
-    public static Furniture t_easy_2 =  new Furniture("Barbie House", lt_e_2);
-    public static Furniture t_easy_3 =  new Furniture("Craft Table", lt_e_3, "Teddy bear");
-    public static Furniture t_easy_4 =  new Furniture("Lego Box", lt_e_4);
+    public static Furniture t_easy_1 =  new Furniture("Toy Chest", "North",lt_e_1, "Lily's Schedule");
+    public static Furniture t_easy_2 =  new Furniture("Barbie House", "South",lt_e_2);
+    public static Furniture t_easy_3 =  new Furniture("Craft Table", "East",lt_e_3, "Teddy bear");
+    public static Furniture t_easy_4 =  new Furniture("Lego Box", "West", lt_e_4);
 
-    public static Furniture t_med_1 =  new Furniture("Toy Chest", lt_m_1);
-    public static Furniture t_med_2 =  new Furniture("Barbie House", lt_m_2);
-    public static Furniture t_med_3 = new Furniture("Craft Table", lt_m_3, "Lipstick");
-    public static Furniture t_med_4 =  new Furniture("Lego Box", lt_m_4, "Toy Camera");
+    public static Furniture t_med_1 =  new Furniture("Toy Chest", "North",lt_m_1);
+    public static Furniture t_med_2 =  new Furniture("Barbie House", "South",lt_m_2);
+    public static Furniture t_med_3 = new Furniture("Craft Table", "East",lt_m_3, "Lipstick");
+    public static Furniture t_med_4 =  new Furniture("Lego Box", "West",lt_m_4, "Toy Camera");
 
-    public static Furniture t_hard_1 =  new Furniture("Toy Chest", lt_h_1, "Flowers");
-    public static Furniture t_hard_2 =  new Furniture("Barbie House", lt_h_2, "Locket");
-    public static Furniture t_hard_3 = new Furniture("Craft Table", lt_h_3);
-    public static Furniture t_hard_4 =  new Furniture("Lego Box", lt_h_4);
+    public static Furniture t_hard_1 =  new Furniture("Toy Chest", "North",lt_h_1, "Flowers");
+    public static Furniture t_hard_2 =  new Furniture("Barbie House", "South",lt_h_2, "Locket");
+    public static Furniture t_hard_3 = new Furniture("Craft Table", "East",lt_h_3);
+    public static Furniture t_hard_4 =  new Furniture("Lego Box", "West",lt_h_4);
 
-    public static Furniture k_easy_1 =  new Furniture("Dishwasher", lk_e_1);
-    public static Furniture k_easy_2 =  new Furniture("Microwave", lk_e_2, "Medicine Pamphlet");
-    public static Furniture k_easy_3 =  new Furniture("Oven", lk_e_3, "Bowl with traces of unknown substance");
-    public static Furniture k_easy_4 =  new Furniture("Pantry", lk_e_4);
+    public static Furniture k_easy_1 =  new Furniture("Dishwasher", "North",lk_e_1);
+    public static Furniture k_easy_2 =  new Furniture("Microwave","South", lk_e_2, "Medicine Pamphlet");
+    public static Furniture k_easy_3 =  new Furniture("Oven", "East",lk_e_3, "Bowl with traces of unknown substance");
+    public static Furniture k_easy_4 =  new Furniture("Pantry", "West",lk_e_4);
 
-    public static Furniture k_med_1 =  new Furniture("Dishwasher", lk_m_1);
-    public static Furniture k_med_2 =  new Furniture("Microwave", lk_m_2, "Cake");
-    public static Furniture k_med_3 =  new Furniture("Oven", lk_m_3, "Pharmacy Card");
-    public static Furniture k_med_4 =  new Furniture("Pantry", lk_m_4);
+    public static Furniture k_med_1 =  new Furniture("Dishwasher","North", lk_m_1);
+    public static Furniture k_med_2 =  new Furniture("Microwave","South", lk_m_2, "Cake");
+    public static Furniture k_med_3 =  new Furniture("Oven", "East",lk_m_3, "Pharmacy Card");
+    public static Furniture k_med_4 =  new Furniture("Pantry", "West",lk_m_4);
 
-    public static Furniture k_hard_1 =  new Furniture("Dishwasher", lk_h_1, "Tea Cup");
-    public static Furniture k_hard_2 =  new Furniture("Microwave", lk_h_1, "Purse");
-    public static Furniture k_hard_3 =  new Furniture("Oven", lk_h_1);
-    public static Furniture k_hard_4 =  new Furniture("Pantry", lk_h_1);
+    public static Furniture k_hard_1 =  new Furniture("Dishwasher", "North",lk_h_1, "Tea Cup");
+    public static Furniture k_hard_2 =  new Furniture("Microwave", "South",lk_h_1, "Purse");
+    public static Furniture k_hard_3 =  new Furniture("Oven","East", lk_h_1);
+    public static Furniture k_hard_4 =  new Furniture("Pantry", "West",lk_h_1);
 
-    public static Furniture b_easy_1 =  new Furniture("Toilet", lb_e_1);
-    public static Furniture b_easy_2 =  new Furniture("Medicine Cabinet", lb_e_2, "Hair Pin");
-    public static Furniture b_easy_3 =  new Furniture("Trash Can", lb_e_3);
-    public static Furniture b_easy_4 =  new Furniture("Shower", lb_e_4, "Medicine Bottle");
+    public static Furniture b_easy_1 =  new Furniture("Toilet", "North",lb_e_1);
+    public static Furniture b_easy_2 =  new Furniture("Medicine Cabinet","South", lb_e_2, "Hair Pin");
+    public static Furniture b_easy_3 =  new Furniture("Trash Can", "East",lb_e_3);
+    public static Furniture b_easy_4 =  new Furniture("Shower","West", lb_e_4, "Medicine Bottle");
 
-    public static Furniture b_med_1 =  new Furniture("Toilet", lb_m_1, "Pills");
-    public static Furniture b_med_2 =  new Furniture("Medicine Cabinet", lb_m_2, "Necklace");
-    public static Furniture b_med_3 =  new Furniture("Trash Can", lb_m_3);
-    public static Furniture b_med_4 = new Furniture("Shower", lb_m_4);
+    public static Furniture b_med_1 =  new Furniture("Toilet","North",lb_m_1, "Pills");
+    public static Furniture b_med_2 =  new Furniture("Medicine Cabinet", "South",lb_m_2, "Necklace");
+    public static Furniture b_med_3 =  new Furniture("Trash Can","East", lb_m_3);
+    public static Furniture b_med_4 = new Furniture("Shower", "West",lb_m_4);
 
-    public static Furniture b_hard_1 =  new Furniture("Toilet", lb_h_1, "Straightener");
-    public static Furniture b_hard_2 =  new Furniture("Medicine Cabinet", lb_h_2, "Hairbrush");
-    public static Furniture b_hard_3 =  new Furniture("Trash Can", lb_h_3);
-    public static Furniture b_hard_4 = new Furniture("Shower", lb_h_4);
+    public static Furniture b_hard_1 =  new Furniture("Toilet", "North",lb_h_1, "Straightener");
+    public static Furniture b_hard_2 =  new Furniture("Medicine Cabinet", "South",lb_h_2, "Hairbrush");
+    public static Furniture b_hard_3 =  new Furniture("Trash Can","East", lb_h_3);
+    public static Furniture b_hard_4 = new Furniture("Shower", "West",lb_h_4);
 
-    public static Furniture lr_1 =  new Furniture("Coffee Table", llr_1, "Picture of Lily");
-    public static Furniture lr_2 =  new Furniture("Safe", llr_2, "Glass Vase Shard");
-    public static Furniture lr_3 =  new Furniture("China Cabinet", llr_3);
-    public static Furniture lr_4 =  new Furniture("Bookshelf", llr_4);
+    public static Furniture lr_1 =  new Furniture("Coffee Table", "North",llr_1, "Picture of Lily");
+    public static Furniture lr_2 =  new Furniture("Safe", "South",llr_2,"Glass Vase Shard");
+    public static Furniture lr_3 =  new Furniture("China Cabinet", "East",llr_3);
+    public static Furniture lr_4 =  new Furniture("Bookshelf", "West",llr_4);
 
     public static Bedroom bedroom = new Bedroom("Door", "ROMANTICIZE", bd_1, bd_2, bd_3, bd_4);
     public static Toyroom toyroom_easy = new Toyroom("Door", "OBSESSION", t_easy_1, t_easy_2, t_easy_3, t_easy_4);
@@ -171,6 +171,7 @@ public class Purgatory {
             System.out.println(c.getName() + " has understood the purpose of Purgatory.\n" + c.getName() + " is in Purgatory because one day she felt extremely lonely and saw the future love of her life, Lily, outside of her window.\nShe became entraced by her beauty and soon became obsessed to the point of stalking Lily to get close to her.\nThrough her stalking, she was able to get hired by Lily's brother to babysit Lily's niece at Lily's house.\nWeeks later, they have a date at " + c.getName() + "'s house.\nShe poisoned a cake so Lily can get sick and would have to rely on her.\nShe made Lily feel safe and asked Lily to stay over so she can take care of her.\nEventually, the truth revealed itself and then Lily became infuriated and attempted to run away.\n" + c.getName() + ", without thinking, ends up killing Lily with a glass shard from a flower vase so that no one else can ever have her.\nThen she poisoned herself because life is no longer worth living without Lily.\n" + c.getName() + " is now in the game Purgatory to repent her sins and reflect on her actions.");
         }
         } 
+
 
     public static void main(String[] args) {
         //Purgatory theGame = new Purgatory();

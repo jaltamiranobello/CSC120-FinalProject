@@ -11,9 +11,11 @@ public class Character {
     public ArrayList<String> collected_items_kch;
     public ArrayList<String> collected_items_bth;
     public ArrayList<String> collected_items_lr;
+    public Letter current_letter;
+    public Furniture current_f;
 
     private String position;
-    private ArrayList<String> held_items;
+    private ArrayList<Object> held_items;
     public Room room_location;
     public ArrayList<Room> room_history;
 
@@ -23,13 +25,15 @@ public class Character {
         this.position = "South";
         this.held_items = new ArrayList<>();
         this.room_location = room_location;
+        this.current_letter = new Letter("N/A");
+        this.current_f = new Furniture ("FAKE", "N/A");
     }
 
     public ArrayList<String> getNotes(){
         return this.notes;
     }
 
-    public ArrayList<String> getHeldItems(){
+    public ArrayList<Object> getHeldItems(){
         return this.held_items;
     }
 
@@ -70,23 +74,30 @@ public class Character {
 
     public void open(Furniture f){
         try {
-            if (f.open_status == true){
+            if(!this.position.equals(f.direction)){
+                throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is not in her vicinity. Find where it is first.");
+            }
+            else if (f.open_status == true){
                 throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is already open.");
             }
             else if (f.getLetter() == null & f.getSpecialItem() == null) {
                 f.open_status = true;
+                this.current_f = f;
                 System.out.println("This " + f.getType() + " has nothing inside");
             }
             else if (f.getLetter() != null & f.getSpecialItem() == null){
                 f.open_status = true;
+                this.current_f = f;
                 System.out.println("This " + f.getType() + " has a letter inside. Maybe you want to read the letter, maybe you don't - your choice 😉...");
             }
             else if (f.getLetter() == null & f.getSpecialItem() != null){
                 f.open_status = true;
+                this.current_f = f;
                 System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab or ignore it 😌.....");
             }
             else {
                 System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to read the letter, maybe you want to grab or ignore the " + f.getSpecialItem() + "- your choice 😉");
+                this.current_f = f;
             } 
         } 
         catch (Exception e) {
@@ -96,7 +107,10 @@ public class Character {
 
     public void close(Furniture f){
         try {
-            if (f.open_status == false){
+            if(!this.position.equals(f.direction)){
+                throw new RuntimeException(this.name + " can't close" + f.getType() + " because it is not in her vicinity. Find where it is first.");
+            }
+            else if (f.open_status == false){
                 throw new RuntimeException(this.name + " can't close " + f.getType() + " because it is already closed.");
             }
             f.open_status = false;
@@ -107,13 +121,21 @@ public class Character {
         }
     }
 
-    public void read(Letter l){
-        System.out.println("The letter states the following: " + l.getText());
+
+    public void read(){
+        try{if(this.current_letter.getText()== "N/A"){
+            throw new RuntimeException(this.name+ " has yet to pick up a letter.");
+        }
+        System.out.println("The letter states the following: " + this.current_letter.getText());
+    }
+    catch(Exception e){
+    System.out.println(e);
+    }
     }
 
-    public void write(String note){
-        this.notes.add(note);
-        System.out.println(this.name + " has written " + note + "in their notebook.");
+    public void write(){
+        this.notes.add(this.current_letter.getText());
+        System.out.println(this.name + " has written " + this.current_letter.getText() +" in their notebook.");
     }
 
     public void viewnotes(){
@@ -130,10 +152,22 @@ public class Character {
         }
     }
 
+    public void pickup_letter(Letter l){
+        try{
+            if (this.held_items.size()==2){
+                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the letter.");
+            }
+            this.held_items.add(l);
+            this.current_letter = l;
+            System.out.println(this.name + " is now holding the letter." + this.name + " can read it or not.");
+        } catch(Exception e){
+            System.out.println(e);
+        }
+    }
     public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
-                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an item in order to pick up the " + special_item + ".");
+                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the " + special_item + ".");
             }
             this.held_items.add(special_item);
             System.out.println(this.name + " picked up a/an" + special_item + ". Maybe you want to keep it or not 😈....");
@@ -193,6 +227,17 @@ public class Character {
         }
     }
 
+    public void putDown_letter(){
+        try{
+            if(this.current_letter.getText() == "N/A"){
+                throw new RuntimeException(this.name + " cannot put down the letter because she does not currently have one");
+            }
+            this.current_letter = new Letter("N/A");
+            System.out.println(this.name + " has dropped a letter.");
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
     public void drop(String special_item){
         try{
             if (this.held_items.contains(special_item) == false){
@@ -221,7 +266,7 @@ public class Character {
     }
 
     public void help(){
-        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nClose\nRead\nWrite\nView notes\nGrab\nKeep\nDrop\nTurn on light\nExit");
+        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nPick Up Letter\nPut Down Letter\nClose\nRead\nWrite\nView Notes\nGrab\nKeep\nDrop\nTurn on Light\nExit");
     }
 
     public void goback(){
