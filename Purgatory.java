@@ -206,6 +206,34 @@ public class Purgatory {
                 }
 
             }
+            else if (c.room_location instanceof Kitchen){
+                if (c.position == "North"){
+                    System.out.println("There is a dishwasher here.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a microwave here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a oven here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a pantry here.");
+                }
+            }
+            else if (c.room_location instanceof Bathroom){
+                if (c.position == "North"){
+                    System.out.println("There is a toilet cabinet here.");
+                }
+                else if(c.position == "South") {
+                     System.out.println("There is a medicine cabinet here.");
+                }
+                else if(c.position == "East"){
+                     System.out.println("There is a trash can here.");
+                }
+                else if(c.position == "West"){
+                     System.out.println("There is a shower here.");
+                }
+            }
             else if (c.room_location instanceof LivingRoom){
                 if (c.position == "North"){
                     System.out.println("There is coffee table.");
