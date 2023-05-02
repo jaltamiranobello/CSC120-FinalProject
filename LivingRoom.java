@@ -19,7 +19,7 @@ public class LivingRoom extends Room {
     }
 
     public String toString() {
-       String x = "This is a living room and it has " + this.objects.size() + " pieces of furniture; you can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room.";
+       String x = "This is a living room and it has four pieces of furniture: Coffe Table, Safe, China Cabinet, and Bookshelf. You can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room.";
        return x;
     }
 }

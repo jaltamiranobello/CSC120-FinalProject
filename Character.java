@@ -14,7 +14,7 @@ public class Character {
     public Letter current_letter;
     public Furniture current_f;
 
-    private String position;
+    public String position;
     private ArrayList<Object> held_items;
     public Room room_location;
     public ArrayList<Room> room_history;
@@ -49,22 +49,25 @@ public class Character {
             if (direction == "North"){
                 this.position = "North";
                 System.out.println(this.name + " moved towards the northern wall.");
+                Purgatory.nearMe(this);
             }
     
             else if (direction == "East"){
                 this.position = "East";
                 System.out.println(this.name + " moved towards the eastern wall.");
-
+                Purgatory.nearMe(this);
             }
     
             else if (direction == "South"){
                 this.position = "South";
                 System.out.println(this.name + " moved towards the southern wall.");
+                Purgatory.nearMe(this);
             }
     
             else if (direction == "West"){
                 this.position = "West";
                 System.out.println(this.name + " moved towards the western wall.");
+                Purgatory.nearMe(this);
             }
         }
         catch(Exception e){
@@ -153,13 +156,13 @@ public class Character {
         }
     }
 
-    public void pickup_letter(Letter l){
+    public void pickup_letter(){
         try{
             if (this.held_items.size()==2){
                 throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the letter.");
             }
-            this.held_items.add(l);
-            this.current_letter = l;
+            this.held_items.add(this.current_f.getLetter());
+            this.current_letter = this.current_f.getLetter();
             System.out.println(this.name + " is now holding the letter." + this.name + " can read it or not.");
         } catch(Exception e){
             System.out.println(e);

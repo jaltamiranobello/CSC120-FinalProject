@@ -176,6 +176,26 @@ public class Purgatory {
         }
         } 
 
+        public static void nearMe(Character c){
+            if (c.room_location == bedroom){
+                if (c.position == "North"){
+                    System.out.println("There is a desk here.");
+                }
+                else if(c.position == "South") {
+
+                }
+                else if(c.position == "East"){
+
+                }
+                else if(c.position == "West"){
+
+                }
+            }
+            else if (){
+
+            }
+        }
+
 
     public static void main(String[] args) {
         System.out.print("Welcome to Purgatory! You will be playing with the character named Jessica. To start playing, enter start: ");
