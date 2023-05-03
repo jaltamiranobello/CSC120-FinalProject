@@ -69,12 +69,12 @@ public class Purgatory {
 
     public static Furniture t_med_1 =  new Furniture("Toy Chest", "North",lt_m_1);
     public static Furniture t_med_2 =  new Furniture("Barbie House", "South",lt_m_2);
-    public static Furniture t_med_3 = new Furniture("Craft Table", "East",lt_m_3, "Lipstick");
+    public static Furniture t_med_3 =  new Furniture("Craft Table", "East",lt_m_3, "Lipstick");
     public static Furniture t_med_4 =  new Furniture("Lego Box", "West",lt_m_4, "Toy Camera");
 
     public static Furniture t_hard_1 =  new Furniture("Toy Chest", "North",lt_h_1, "Flowers");
     public static Furniture t_hard_2 =  new Furniture("Barbie House", "South",lt_h_2, "Locket");
-    public static Furniture t_hard_3 = new Furniture("Craft Table", "East",lt_h_3);
+    public static Furniture t_hard_3 =  new Furniture("Craft Table", "East",lt_h_3);
     public static Furniture t_hard_4 =  new Furniture("Lego Box", "West",lt_h_4);
 
     public static Furniture k_easy_1 =  new Furniture("Dishwasher", "North",lk_e_1);
@@ -164,14 +164,14 @@ public class Purgatory {
             c.room_location = bathroom_hard;
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_hard.toString());
         }
-        else if (c.room_location instanceof Bathroom) {
+        else if (c.room_location instanceof Bathroom){
             c.room_location = livingRoom;
             System.out.println(c.getName() + " is now in a Living Room. " + livingRoom.toString());
         }
         else if(c.room_location instanceof LivingRoom & c.collected_items.size() < 8){
             System.out.println(c.getName() + " has failed to understand the purpose of Purgatory. " + c.getName() + " has woken up in the initial room again...");
         }
-        else if(c.room_location instanceof LivingRoom & c.collected_items.size() >= 8 ){
+        else if(c.room_location instanceof LivingRoom & c.collected_items.size() >= 8){
             System.out.println(c.getName() + " has understood the purpose of Purgatory.\n" + c.getName() + " is in Purgatory because one day she felt extremely lonely and saw the future love of her life, Lily, outside of her window.\nShe became entraced by her beauty and soon became obsessed to the point of stalking Lily to get close to her.\nThrough her stalking, she was able to get hired by Lily's brother to babysit Lily's niece at Lily's house.\nWeeks later, they have a date at " + c.getName() + "'s house.\nShe poisoned a cake so Lily can get sick and would have to rely on her.\nShe made Lily feel safe and asked Lily to stay over so she can take care of her.\nEventually, the truth revealed itself and then Lily became infuriated and attempted to run away.\n" + c.getName() + ", without thinking, ends up killing Lily with a glass shard from a flower vase so that no one else can ever have her.\nThen she poisoned herself because life is no longer worth living without Lily.\n" + c.getName() + " is now in the game Purgatory to repent her sins and reflect on her actions.");
         }
         } 
@@ -196,15 +196,14 @@ public class Purgatory {
                     System.out.println("There is a toychest here.");
                 }
                 else if(c.position == "South") {
-                    System.out.println("There is a Barbie house here.");
+                    System.out.println("There is a barbie house here.");
                 }
                 else if(c.position == "East"){
                     System.out.println("There is a craft table here.");
                 }
                 else if(c.position == "West"){
-                    System.out.println("There is a Lego box here.");
+                    System.out.println("There is a lego box here.");
                 }
-
             }
             else if (c.room_location instanceof Kitchen){
                 if (c.position == "North"){
@@ -248,12 +247,49 @@ public class Purgatory {
                     System.out.println("There is a bookshelf here.");
                 }
             }
-
         }
 
         public static Furniture whichFurniture(Character c, String furniture){
             String f = furniture.toLowerCase();
-            if (f == "barbie house"){
+            if (f == "desk") {
+                if (c.room_location == bedroom) {
+                    Furniture x = bd_1;
+                    return x;
+                }
+            }
+            else if (f == "nightstand") {
+                if (c.room_location == bedroom) {
+                    Furniture x = bd_2;
+                    return x;
+                }
+            }
+            else if (f == "dresser") {
+                if (c.room_location == bedroom) {
+                    Furniture x = bd_3;
+                    return x;
+                }
+            }
+            else if (f == "closet") {
+                if (c.room_location == bedroom) {
+                    Furniture x = bd_4;
+                    return x;
+                }
+            }
+            else if (f == "toy chest") {
+                if (c.room_location == toyroom_easy){
+                    Furniture x = t_easy_1;
+                    return x;
+                }
+                else if(c.room_location == toyroom_med ){
+                    Furniture x = t_med_1;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = t_hard_1;
+                    return x;
+                }
+            }
+            else if (f == "barbie house"){
                 if (c.room_location == toyroom_easy){
                     Furniture x = t_easy_2;
                     return x;
@@ -266,6 +302,171 @@ public class Purgatory {
                     Furniture x = t_hard_2;
                     return x;
                 }
+            }
+            else if (f == "craft table"){
+                if (c.room_location == toyroom_easy){
+                    Furniture x = t_easy_3;
+                    return x;
+                }
+                else if(c.room_location == toyroom_med ){
+                    Furniture x = t_med_3;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = t_hard_3;
+                    return x;
+                }
+            }
+            else if (f == "lego box"){
+                if (c.room_location == toyroom_easy){
+                    Furniture x = t_easy_4;
+                    return x;
+                }
+                else if(c.room_location == toyroom_med ){
+                    Furniture x = t_med_4;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = t_hard_4;
+                    return x;
+                }
+            }
+            else if (f == "dishwasher"){
+                if (c.room_location == kitchen_easy){
+                    Furniture x = k_easy_1;
+                    return x;
+                }
+                else if(c.room_location == kitchen_med){
+                    Furniture x = k_med_1;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = k_hard_1;
+                    return x;
+                }
+            }
+            else if (f == "microwave"){
+                if (c.room_location == kitchen_easy){
+                    Furniture x = k_easy_2;
+                    return x;
+                }
+                else if(c.room_location == kitchen_med){
+                    Furniture x = k_med_2;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = k_hard_2;
+                    return x;
+                }
+            }
+            else if (f == "oven"){
+                if (c.room_location == kitchen_easy){
+                    Furniture x = k_easy_3;
+                    return x;
+                }
+                else if(c.room_location == kitchen_med){
+                    Furniture x = k_med_3;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = k_hard_3;
+                    return x;
+                }
+            }
+            else if (f == "pantry"){
+                if (c.room_location == kitchen_easy){
+                    Furniture x = k_easy_4;
+                    return x;
+                }
+                else if(c.room_location == kitchen_med){
+                    Furniture x = k_med_4;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = k_hard_4;
+                    return x;
+                }
+            }
+            else if (f == "toilet"){
+                if (c.room_location == bathroom_easy){
+                    Furniture x = b_easy_1;
+                    return x;
+                }
+                else if(c.room_location == bathroom_med){
+                    Furniture x = b_med_1;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = b_hard_1;
+                    return x;
+                }
+            }
+            else if (f == "medicine cabinet"){
+                if (c.room_location == bathroom_easy){
+                    Furniture x = b_easy_2;
+                    return x;
+                }
+                else if(c.room_location == bathroom_med){
+                    Furniture x = b_med_2;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = b_hard_2;
+                    return x;
+                }
+            }
+            else if (f == "trash can"){
+                if (c.room_location == bathroom_easy){
+                    Furniture x = b_easy_3;
+                    return x;
+                }
+                else if(c.room_location == bathroom_med){
+                    Furniture x = b_med_3;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = b_hard_3;
+                    return x;
+                }
+            }
+            else if (f == "shower"){
+                if (c.room_location == bathroom_easy){
+                    Furniture x = b_easy_4;
+                    return x;
+                }
+                else if(c.room_location == bathroom_med){
+                    Furniture x = b_med_4;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = b_hard_4;
+                    return x;
+                }
+            }
+            else if (f == "coffee table"){
+                if (c.room_location == livingRoom){
+                    Furniture x = lr_1;
+                    return x;
+                }
+            }
+            else if (f == "safe"){
+                if (c.room_location == livingRoom){
+                    Furniture x = lr_2;
+                    return x;
+                }
+            }
+            else if (f == "china cabinet"){
+                if (c.room_location == livingRoom){
+                    Furniture x = lr_3;
+                    return x;
+                }
+            }
+            else if (f == "bookshelf"){
+                if (c.room_location == livingRoom){
+                    Furniture x = lr_4;
+                    return x;
+                }
+            }
         }
 
 
