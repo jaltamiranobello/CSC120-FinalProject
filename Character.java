@@ -271,7 +271,12 @@ public class Character {
     }
 
     public void help(){
-        System.out.println("These are the following actions you can utilize to escape the rooms:\nWalk\nOpen\nPick Up Letter\nPut Down Letter\nClose\nRead\nWrite\nView Notes\nGrab\nKeep\nDrop\nTurn on Light\nExit");
+        System.out.println("These are the following actions you can utilize to escape the rooms:");
+        System.out.println("Walk to a direction(North, South, East, West)");
+        System.out.println("Open/Close a Furniture(Desk, Nighstand, Dresser, Closet, Toychest, Barbie House, Craft Table, Lego Box, Dishwasher, Microwave, Oven, Pantry, Toilet, Medicine Cabinet, Trash Can, Shower, Coffee Table, Safe, China Cabinet, Bookshelf)");
+        System.out.println("Pick Up a Letter\nPut Down a Letter\nRead a letter\nWrite down notes containing the information of a letter\nView notes");
+        System.out.println("Grab/Keep/Drop Special Items(Binoculars, Phone, Lily's Schedule, Teddy Bear, Lipstick, Toy Camera, Flowers, Locket, Medicine Pamphlet, Bowl with traces of unknown substance, Cake, Pharmacy Card, Tea Cup, Purse, Hair Pin, Medicine Bottle, Pills, Necklace, Straightener, Hairbrush, Picture of Lily, Glass Vase Shard)");
+        System.out.println("Turn on Light\nEnter code to exit a room");
     }
 
     public void goback(){
