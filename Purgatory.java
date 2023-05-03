@@ -249,31 +249,26 @@ public class Purgatory {
             }
         }
 
+        Scanner whichFurn = new Scanner(System.in);
+        String furniture = whichFurn.nextLine();
+
         public static Furniture whichFurniture(Character c, String furniture){
             String f = furniture.toLowerCase();
             if (f == "desk") {
-                if (c.room_location == bedroom) {
-                    Furniture x = bd_1;
-                    return x;
-                }
+                Furniture x = bd_1;
+                return x;
             }
             else if (f == "nightstand") {
-                if (c.room_location == bedroom) {
-                    Furniture x = bd_2;
-                    return x;
-                }
+                Furniture x = bd_2;
+                return x;
             }
             else if (f == "dresser") {
-                if (c.room_location == bedroom) {
-                    Furniture x = bd_3;
-                    return x;
-                }
+                Furniture x = bd_3;
+                return x;
             }
             else if (f == "closet") {
-                if (c.room_location == bedroom) {
-                    Furniture x = bd_4;
-                    return x;
-                }
+                Furniture x = bd_4;
+                return x;
             }
             else if (f == "toy chest") {
                 if (c.room_location == toyroom_easy){
@@ -284,7 +279,7 @@ public class Purgatory {
                     Furniture x = t_med_1;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = t_hard_1;
                     return x;
                 }
@@ -298,7 +293,7 @@ public class Purgatory {
                     Furniture x = t_med_2;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = t_hard_2;
                     return x;
                 }
@@ -312,7 +307,7 @@ public class Purgatory {
                     Furniture x = t_med_3;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = t_hard_3;
                     return x;
                 }
@@ -326,7 +321,7 @@ public class Purgatory {
                     Furniture x = t_med_4;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = t_hard_4;
                     return x;
                 }
@@ -340,7 +335,7 @@ public class Purgatory {
                     Furniture x = k_med_1;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = k_hard_1;
                     return x;
                 }
@@ -354,7 +349,7 @@ public class Purgatory {
                     Furniture x = k_med_2;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = k_hard_2;
                     return x;
                 }
@@ -368,7 +363,7 @@ public class Purgatory {
                     Furniture x = k_med_3;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = k_hard_3;
                     return x;
                 }
@@ -382,7 +377,7 @@ public class Purgatory {
                     Furniture x = k_med_4;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = k_hard_4;
                     return x;
                 }
@@ -396,7 +391,7 @@ public class Purgatory {
                     Furniture x = b_med_1;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = b_hard_1;
                     return x;
                 }
@@ -410,7 +405,7 @@ public class Purgatory {
                     Furniture x = b_med_2;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = b_hard_2;
                     return x;
                 }
@@ -424,7 +419,7 @@ public class Purgatory {
                     Furniture x = b_med_3;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = b_hard_3;
                     return x;
                 }
@@ -438,34 +433,29 @@ public class Purgatory {
                     Furniture x = b_med_4;
                     return x;
                 }
-                else if(c.room_location == toyroom_hard ){
+                else {
                     Furniture x = b_hard_4;
                     return x;
                 }
             }
             else if (f == "coffee table"){
-                if (c.room_location == livingRoom){
-                    Furniture x = lr_1;
-                    return x;
-                }
+                Furniture x = lr_1;
+                return x;
             }
             else if (f == "safe"){
-                if (c.room_location == livingRoom){
-                    Furniture x = lr_2;
-                    return x;
-                }
+                Furniture x = lr_2;
+                return x;
             }
             else if (f == "china cabinet"){
-                if (c.room_location == livingRoom){
-                    Furniture x = lr_3;
-                    return x;
-                }
+                Furniture x = lr_3;
+                return x;
             }
             else if (f == "bookshelf"){
-                if (c.room_location == livingRoom){
-                    Furniture x = lr_4;
-                    return x;
-                }
+                Furniture x = lr_4;
+                return x;
+            }
+            else {
+                throw new RuntimeException("That is not a furniture " + c.getName() + " can open/close.");
             }
         }
 
