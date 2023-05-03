@@ -18,7 +18,7 @@ public class Bedroom extends Room {
     }
 
     public String toString() {
-       String x = "\nThis is a bedroom and it has four pieces of furniture: Desk, Nightstand, Dresser, and Closet. You can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room.";
+       String x = "\nThis is a bedroom and it has four pieces of furniture: Desk, Nightstand, Dresser, and Closet. You can chose to retrieve some objects in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room and there is a nightstand here.";
        return x;
     }
 }

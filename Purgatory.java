@@ -58,7 +58,7 @@ public class Purgatory {
     public static Furniture bd_1 = new Furniture("Desk", "North", lbd_1);
     public static Furniture bd_2 = new Furniture("Nightstand", "South",lbd_2, "Binoculars");
     public static Furniture bd_3 = new Furniture("Dresser","East", lbd_3);
-    public static Furniture bd_4 =  new Furniture("Closet", "West", lbd_3, "Phone");
+    public static Furniture bd_4 =  new Furniture("Closet", "West", lbd_4, "Phone");
 
     public static Furniture t_easy_1 =  new Furniture("Toy Chest", "North",lt_e_1, "Lily's Schedule");
     public static Furniture t_easy_2 =  new Furniture("Barbie House", "South",lt_e_2);
@@ -86,9 +86,9 @@ public class Purgatory {
     public static Furniture k_med_4 =  new Furniture("Pantry", "West",lk_m_4);
 
     public static Furniture k_hard_1 =  new Furniture("Dishwasher", "North",lk_h_1, "Tea Cup");
-    public static Furniture k_hard_2 =  new Furniture("Microwave", "South",lk_h_1, "Purse");
-    public static Furniture k_hard_3 =  new Furniture("Oven","East", lk_h_1);
-    public static Furniture k_hard_4 =  new Furniture("Pantry", "West",lk_h_1);
+    public static Furniture k_hard_2 =  new Furniture("Microwave", "South",lk_h_2, "Purse");
+    public static Furniture k_hard_3 =  new Furniture("Oven","East", lk_h_3);
+    public static Furniture k_hard_4 =  new Furniture("Pantry", "West",lk_h_4);
 
     public static Furniture b_easy_1 =  new Furniture("Toilet", "North",lb_e_1);
     public static Furniture b_easy_2 =  new Furniture("Medicine Cabinet","South", lb_e_2, "Hair Pin");
@@ -173,6 +173,81 @@ public class Purgatory {
             System.out.println(c.getName() + " has understood the purpose of Purgatory.\n" + c.getName() + " is in Purgatory because one day she felt extremely lonely and saw the future love of her life, Lily, outside of her window.\nShe became entraced by her beauty and soon became obsessed to the point of stalking Lily to get close to her.\nThrough her stalking, she was able to get hired by Lily's brother to babysit Lily's niece at Lily's house.\nWeeks later, they have a date at " + c.getName() + "'s house.\nShe poisoned a cake so Lily can get sick and would have to rely on her.\nShe made Lily feel safe and asked Lily to stay over so she can take care of her.\nEventually, the truth revealed itself and then Lily became infuriated and attempted to run away.\n" + c.getName() + ", without thinking, ends up killing Lily with a glass shard from a flower vase so that no one else can ever have her.\nThen she poisoned herself because life is no longer worth living without Lily.\n" + c.getName() + " is now in the game Purgatory to repent her sins and reflect on her actions.");
         }
         } 
+
+        public static void nearMe(Character c){
+            if (c.room_location instanceof Bedroom){
+                if (c.position == "North"){
+                    System.out.println("There is a desk here.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a nightstand here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a dresser here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a closet here.");
+                }
+            }
+            else if (c.room_location instanceof Toyroom){
+                if (c.position == "North"){
+                    System.out.println("There is a toychest here.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a Barbie house here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a craft table here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a Lego box here.");
+                }
+
+            }
+            else if (c.room_location instanceof Kitchen){
+                if (c.position == "North"){
+                    System.out.println("There is a dishwasher here.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a microwave here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a oven here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a pantry here.");
+                }
+            }
+            else if (c.room_location instanceof Bathroom){
+                if (c.position == "North"){
+                    System.out.println("There is a toilet cabinet here.");
+                }
+                else if(c.position == "South") {
+                     System.out.println("There is a medicine cabinet here.");
+                }
+                else if(c.position == "East"){
+                     System.out.println("There is a trash can here.");
+                }
+                else if(c.position == "West"){
+                     System.out.println("There is a shower here.");
+                }
+            }
+            else if (c.room_location instanceof LivingRoom){
+                if (c.position == "North"){
+                    System.out.println("There is coffee table.");
+                }
+                else if(c.position == "South") {
+                    System.out.println("There is a safe here.");
+                }
+                else if(c.position == "East"){
+                    System.out.println("There is a china cabinet here.");
+                }
+                else if(c.position == "West"){
+                    System.out.println("There is a bookshelf.");
+                }
+            }
+
+        }
 
 
     public static void main(String[] args) {
