@@ -60,7 +60,7 @@ public class Purgatory {
     public static Furniture bd_1 = new Furniture("Desk", "North", lbd_1);
     public static Furniture bd_2 = new Furniture("Nightstand", "South",lbd_2, "Binoculars");
     public static Furniture bd_3 = new Furniture("Dresser","East", lbd_3);
-    public static Furniture bd_4 =  new Furniture("Closet", "West", lbd_3, "Phone");
+    public static Furniture bd_4 =  new Furniture("Closet", "West", lbd_4, "Phone");
 
     public static Furniture t_easy_1 =  new Furniture("Toy Chest", "North",lt_e_1, "Lily's Schedule");
     public static Furniture t_easy_2 =  new Furniture("Barbie House", "South",lt_e_2);
@@ -88,9 +88,9 @@ public class Purgatory {
     public static Furniture k_med_4 =  new Furniture("Pantry", "West",lk_m_4);
 
     public static Furniture k_hard_1 =  new Furniture("Dishwasher", "North",lk_h_1, "Tea Cup");
-    public static Furniture k_hard_2 =  new Furniture("Microwave", "South",lk_h_1, "Purse");
-    public static Furniture k_hard_3 =  new Furniture("Oven","East", lk_h_1);
-    public static Furniture k_hard_4 =  new Furniture("Pantry", "West",lk_h_1);
+    public static Furniture k_hard_2 =  new Furniture("Microwave", "South",lk_h_2, "Purse");
+    public static Furniture k_hard_3 =  new Furniture("Oven","East", lk_h_3);
+    public static Furniture k_hard_4 =  new Furniture("Pantry", "West",lk_h_4);
 
     public static Furniture b_easy_1 =  new Furniture("Toilet", "North",lb_e_1);
     public static Furniture b_easy_2 =  new Furniture("Medicine Cabinet","South", lb_e_2, "Hair Pin");
@@ -247,7 +247,6 @@ public class Purgatory {
                 else if(c.position == "West"){
                     System.out.println("There is a bookshelf.");
                 }
-
             }
 
         }
