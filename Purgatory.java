@@ -450,12 +450,9 @@ public class Purgatory {
                 Furniture x = lr_3;
                 return x;
             }
-            else if (f == "bookshelf"){
+            else {
                 Furniture x = lr_4;
                 return x;
-            }
-            else {
-                throw new RuntimeException("That is not a furniture " + c.getName() + " can open/close.");
             }
         }
 
