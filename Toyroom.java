@@ -4,8 +4,8 @@ public class Toyroom extends Room {
     
     private ArrayList<Furniture> objects;
 
-    public Toyroom(String exit, String code, Furniture a, Furniture b, Furniture c, Furniture d){
-        super(exit, code);
+    public Toyroom(String code, Furniture a, Furniture b, Furniture c, Furniture d){
+        super(code);
         this.objects = new ArrayList<Furniture>();
         this.objects.add(a);
         this.objects.add(b);

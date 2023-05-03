@@ -5,8 +5,8 @@ public class Bathroom extends Room {
     private ArrayList<Furniture> objects;
 
     //as the rooms get harder, the exit gets harder
-    public Bathroom(String exit, String code, Furniture a, Furniture b, Furniture c, Furniture d){
-        super(exit, code);
+    public Bathroom(String code, Furniture a, Furniture b, Furniture c, Furniture d){
+        super(code);
         this.objects = new ArrayList<Furniture>();
         this.objects.add(a);
         this.objects.add(b);

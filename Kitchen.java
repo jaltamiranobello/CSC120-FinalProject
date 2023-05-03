@@ -3,8 +3,8 @@ public class Kitchen extends Room {
     private ArrayList<Furniture> objects;
 
 
-    public Kitchen(String exit, String code, Furniture a, Furniture b, Furniture c, Furniture d){
-        super(exit, code);
+    public Kitchen(String code, Furniture a, Furniture b, Furniture c, Furniture d){
+        super(code);
         this.objects = new ArrayList<Furniture>();
         this.objects.add(a);
         this.objects.add(b);

@@ -112,17 +112,17 @@ public class Purgatory {
     public static Furniture lr_3 =  new Furniture("China Cabinet", "East",llr_3);
     public static Furniture lr_4 =  new Furniture("Bookshelf", "West",llr_4);
 
-    public static Bedroom bedroom = new Bedroom("Door", "ROMANTICIZE", bd_1, bd_2, bd_3, bd_4);
-    public static Toyroom toyroom_easy = new Toyroom("Door", "OBSESSION", t_easy_1, t_easy_2, t_easy_3, t_easy_4);
-    public static Toyroom toyroom_med = new Toyroom("Window", "INTEREST", t_med_1, t_med_2, t_med_3, t_med_4);
-    public static Toyroom toyroom_hard = new Toyroom("Vent", "ENDEARMENT", t_hard_1, t_hard_2, t_hard_3, t_hard_4);
-    public static Kitchen kitchen_easy = new Kitchen("Door", "POISON", k_easy_1, k_easy_2, k_easy_3, k_easy_4);
-    public static Kitchen kitchen_med = new Kitchen("Window", "SWEET", k_med_1, k_med_2, k_easy_3, k_med_4);
-    public static Kitchen kitchen_hard = new Kitchen("Vent", "FOREVER", k_hard_1, k_hard_2, k_hard_3, k_hard_4);
-    public static Bathroom bathroom_easy = new Bathroom("Door", "SECRET", b_easy_1, b_easy_2, b_easy_3, b_easy_4);
-    public static Bathroom bathroom_med = new Bathroom("Window", "SAFE", b_med_1, b_med_2, b_med_3, b_med_4);
-    public static Bathroom bathroom_hard = new Bathroom("Vent", "CARING", b_hard_1, b_hard_2, b_hard_3, b_hard_4);
-    public static LivingRoom livingRoom = new LivingRoom("Door", "ALONE", lr_1, lr_2, lr_3, lr_4);
+    public static Bedroom bedroom = new Bedroom("ROMANTICIZE", bd_1, bd_2, bd_3, bd_4);
+    public static Toyroom toyroom_easy = new Toyroom("OBSESSION", t_easy_1, t_easy_2, t_easy_3, t_easy_4);
+    public static Toyroom toyroom_med = new Toyroom("INTEREST", t_med_1, t_med_2, t_med_3, t_med_4);
+    public static Toyroom toyroom_hard = new Toyroom("ENDEARMENT", t_hard_1, t_hard_2, t_hard_3, t_hard_4);
+    public static Kitchen kitchen_easy = new Kitchen("POISON", k_easy_1, k_easy_2, k_easy_3, k_easy_4);
+    public static Kitchen kitchen_med = new Kitchen("SWEET", k_med_1, k_med_2, k_easy_3, k_med_4);
+    public static Kitchen kitchen_hard = new Kitchen("FOREVER", k_hard_1, k_hard_2, k_hard_3, k_hard_4);
+    public static Bathroom bathroom_easy = new Bathroom("SECRET", b_easy_1, b_easy_2, b_easy_3, b_easy_4);
+    public static Bathroom bathroom_med = new Bathroom( "SAFE", b_med_1, b_med_2, b_med_3, b_med_4);
+    public static Bathroom bathroom_hard = new Bathroom("CARING", b_hard_1, b_hard_2, b_hard_3, b_hard_4);
+    public static LivingRoom livingRoom = new LivingRoom("ALONE", lr_1, lr_2, lr_3, lr_4);
     
     public static Character jessica = new Character("Jessica", bedroom);
 
@@ -236,7 +236,7 @@ public class Purgatory {
             }
             else if (c.room_location instanceof LivingRoom){
                 if (c.position == "North"){
-                    System.out.println("There is coffee table.");
+                    System.out.println("There is coffee table here.");
                 }
                 else if(c.position == "South") {
                     System.out.println("There is a safe here.");
@@ -245,10 +245,27 @@ public class Purgatory {
                     System.out.println("There is a china cabinet here.");
                 }
                 else if(c.position == "West"){
-                    System.out.println("There is a bookshelf.");
+                    System.out.println("There is a bookshelf here.");
                 }
             }
 
+        }
+
+        public static Furniture whichFurniture(Character c, String furniture){
+            String f = furniture.toLowerCase();
+            if (f == "barbie house"){
+                if (c.room_location == toyroom_easy){
+                    Furniture x = t_easy_2;
+                    return x;
+                }
+                else if(c.room_location == toyroom_med ){
+                    Furniture x = t_med_2;
+                    return x;
+                }
+                else if(c.room_location == toyroom_hard ){
+                    Furniture x = t_hard_2;
+                    return x;
+                }
         }
 
 

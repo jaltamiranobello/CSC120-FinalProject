@@ -3,20 +3,14 @@
 public class Room {
     
     //attributes for basic room
-    private String exit;
     private String code;
     public boolean light;
     
-    public Room(String exit, String code) {
-        this.exit = exit;
+    public Room(String code) {
         this.code = code;
         this.light = false;
     }
-
-    public String getExit() {
-        return this.exit;  
-    }
-
+    
     public String getCode() {
      return this.code;   
     }
