@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Purgatory {
     
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
@@ -251,8 +253,13 @@ public class Purgatory {
 
 
     public static void main(String[] args) {
-        //Purgatory purgatory = new Purgatory();
-            
+        System.out.print("Welcome to Purgatory! You will be playing with the character named Jessica. To start playing, enter start: ");
+        Scanner response = new Scanner(System.in);
+        String user_input = response.nextLine();
+        if (user_input.equals("start") | user_input.equals("START") | user_input.equals("Start")) {
+            System.out.println(bedroom.toString());
+        }
+        response.close();
     }
 
     }
