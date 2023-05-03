@@ -1,7 +1,5 @@
-import java.util.*;
-
 public class Purgatory {
-
+    
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     public static Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     public static Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
@@ -123,7 +121,7 @@ public class Purgatory {
     public static Bathroom bathroom_med = new Bathroom("Window", "SAFE", b_med_1, b_med_2, b_med_3, b_med_4);
     public static Bathroom bathroom_hard = new Bathroom("Vent", "CARING", b_hard_1, b_hard_2, b_hard_3, b_hard_4);
     public static LivingRoom livingRoom = new LivingRoom("Door", "ALONE", lr_1, lr_2, lr_3, lr_4);
-
+    
     public static Character jessica = new Character("Jessica", bedroom);
 
 
@@ -176,93 +174,11 @@ public class Purgatory {
         }
         } 
 
-        public static void nearMe(Character c){
-            if (c.room_location instanceof Bedroom){
-                if (c.position == "North"){
-                    System.out.println("There is a desk here.");
-                }
-                else if(c.position == "South") {
-                    System.out.println("There is a nightstand here.");
-                }
-                else if(c.position == "East"){
-                    System.out.println("There is a dresser here.");
-                }
-                else if(c.position == "West"){
-                    System.out.println("There is a closet here.");
-                }
-            }
-            else if (c.room_location instanceof Toyroom){
-                if (c.position == "North"){
-                    System.out.println("There is a toychest here.");
-                }
-                else if(c.position == "South") {
-                    System.out.println("There is a Barbie house here.");
-                }
-                else if(c.position == "East"){
-                    System.out.println("There is a craft table here.");
-                }
-                else if(c.position == "West"){
-                    System.out.println("There is a Lego box here.");
-                }
-
-            }
-            else if (c.room_location instanceof Kitchen){
-                if (c.position == "North"){
-                    System.out.println("There is a dishwasher here.");
-                }
-                else if(c.position == "South") {
-                    System.out.println("There is a microwave here.");
-                }
-                else if(c.position == "East"){
-                    System.out.println("There is a oven here.");
-                }
-                else if(c.position == "West"){
-                    System.out.println("There is a pantry here.");
-                }
-            }
-            else if (c.room_location instanceof Bathroom){
-                if (c.position == "North"){
-                    System.out.println("There is a toilet cabinet here.");
-                }
-                else if(c.position == "South") {
-                     System.out.println("There is a medicine cabinet here.");
-                }
-                else if(c.position == "East"){
-                     System.out.println("There is a trash can here.");
-                }
-                else if(c.position == "West"){
-                     System.out.println("There is a shower here.");
-                }
-            }
-            else if (c.room_location instanceof LivingRoom){
-                if (c.position == "North"){
-                    System.out.println("There is coffee table.");
-                }
-                else if(c.position == "South") {
-                    System.out.println("There is a safe here.");
-                }
-                else if(c.position == "East"){
-                    System.out.println("There is a china cabinet here.");
-                }
-                else if(c.position == "West"){
-                    System.out.println("There is a bookshelf.");
-                }
-
-            }
-
-        }
-
 
     public static void main(String[] args) {
-        System.out.print("Welcome to Purgatory! You will be playing with the character named Jessica. To start playing, enter start: ");
-        Scanner response = new Scanner(System.in);
-        String user_input = response.nextLine();
-        if (user_input.equals("start") | user_input.equals("START") | user_input.equals("Start")){
-            System.out.println(bedroom.toString());
-        }
-        response.close(); 
+        //Purgatory purgatory = new Purgatory();
+            
     }
 
-    
-}
+    }
 
