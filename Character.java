@@ -1,7 +1,7 @@
 import java.util.*;
 public class Character {
 
-
+    // attributes for character class
     private String name;
     private ArrayList<String> notes;
 
@@ -19,6 +19,10 @@ public class Character {
     public Room room_location;
     public ArrayList<Room> room_history;
 
+    /** constructor for character
+     * @param String name: the name of the character
+     * @Room room_location: the location of the character
+     */
     public Character(String name, Room room_location){
         this.name = name;
         this.notes = new ArrayList<>();
@@ -29,18 +33,24 @@ public class Character {
         this.current_f = new Furniture ("FAKE", "N/A");
     }
 
+    /** getter for arraylist notes */
     public ArrayList<String> getNotes(){
         return this.notes;
     }
 
+    /** getter for arraylist held_items */
     public ArrayList<Object> getHeldItems(){
         return this.held_items;
     }
 
+    /** getter for string name */
     public String getName(){
         return this.name;
     }
 
+    /** method that moves the character's position based on the direction they input
+     * @param String direction: the direction the character wants to move
+     */
     public void walk(String direction){ 
         try{
             if (this.position == direction){
@@ -75,6 +85,9 @@ public class Character {
         }
     }
 
+    /** method that opens a piece of furniture and print the objects inside it
+     * @param Furniture f: the furniture that will be opened
+     */
     public void open(Furniture f){
         try {
             if(!this.position.equals(f.direction)){
@@ -99,7 +112,7 @@ public class Character {
                 System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab or ignore it 😌.....");
             }
             else {
-                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to read the letter, maybe you want to grab or ignore the " + f.getSpecialItem() + "- your choice 😉");
+                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to pick up the letter, maybe you want to grab or ignore the " + f.getSpecialItem() + "- your choice 😉");
                 this.current_f = f;
             } 
         } 
@@ -108,6 +121,9 @@ public class Character {
         }
     }
 
+    /** method that closes a piece of furniture that was opened
+     * @param Furniture f: the furniture that will be closed
+     */
     public void close(Furniture f){
         try {
             if(!this.position.equals(f.direction)){
@@ -124,38 +140,39 @@ public class Character {
         }
     }
 
-
+    /** method that prints the text of a letter after it was picked up */
     public void read(){
         try{
             if(this.current_letter.getText()== "N/A"){
                 throw new RuntimeException(this.name+ " has yet to pick up a letter.");
         }
         System.out.println("The letter states the following: " + this.current_letter.getText());
-    }
-    catch(Exception e){
-    System.out.println(e);
-    }
-    }
-
-    public void write(){
-        this.notes.add(this.current_letter.getText());
-        System.out.println(this.name + " has written " + this.current_letter.getText() +" in their notebook.");
-    }
-
-    public void viewnotes(){
-        try{
-            if (this.notes.isEmpty()){
-            throw new RuntimeException(this.name + " has no notes...");
-            }
-            for (int i = 0; i < this.notes.size(); i ++){
-                System.out.println(this.notes.get(i));
-            }
-        }
-        catch(Exception e){
+        } catch(Exception e){
             System.out.println(e);
         }
     }
 
+    /** method that adds the letter's text into the arraylist notes and prints that it has been written down */
+    public void write(){
+        this.notes.add(this.current_letter.getText());
+        System.out.println(this.name + " has written " + this.current_letter.getText() + " in their notebook.");
+    }
+
+    /** method that views the notes in arraylist notes */
+    public void viewnotes(){
+        try{
+            if (this.notes.isEmpty()){
+                throw new RuntimeException(this.name + " has no notes...");
+            }
+            for (int i = 0; i < this.notes.size(); i ++){
+                System.out.println(this.notes.get(i));
+            }
+        } catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    /** method that picks up a letter to be able to read it based off the furniture that is opened */
     public void pickup_letter(){
         try{
             if (this.held_items.size()==2){
@@ -169,19 +186,25 @@ public class Character {
         }
     }
 
+    /** method that grabs a special_item but wont let the character grab more than 2 items
+     * @param String special_item: the item that the character can grab
+     */
     public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
                 throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the " + special_item + ".");
             }
             this.held_items.add(special_item);
-            System.out.println(this.name + " picked up a/an" + special_item + ". Maybe you want to keep it or not 😈....");
+            System.out.println(this.name + " picked up a/an " + special_item + ". Maybe you want to keep it or not 😈....");
         }
         catch(Exception e){
             System.out.println(e);
         }
     }
 
+    /** method that keeps the special_item after the character grabbed it
+     * @param String special_item: the item that the character can keep
+     */
     public void keep(String special_item){
         try{
             if (this.collected_items.contains(special_item)){
@@ -232,6 +255,7 @@ public class Character {
         }
     }
 
+    /** method that puts down the letter that was picked up */
     public void putDown_letter(){
         try{
             if(this.current_letter.getText() == "N/A"){
@@ -243,6 +267,10 @@ public class Character {
             System.out.println(e);
         }
     }
+
+    /** method that drops a special_item that was grabbed since the character chose to not keep it
+     * @param String special_item
+     */
     public void drop(String special_item){
         try{
             if (this.held_items.contains(special_item) == false){
@@ -256,6 +284,7 @@ public class Character {
         }
     }
 
+    /** method that turns on the light in each room */
     public void turnLight(){
         try{
             if (this.room_location.light == true){
@@ -270,6 +299,7 @@ public class Character {
         }
     }
 
+    /** method that prints info that can help the character */
     public void help(){
         System.out.println("These are the following actions you can utilize to escape the rooms:");
         System.out.println("Walk to a direction(North, South, East, West)");
@@ -279,12 +309,16 @@ public class Character {
         System.out.println("Turn on Light\nEnter code to exit a room");
     }
 
+    /** method that transports the character to the previous room */
     public void goback(){
         Room prev_room =  this.room_history.get(this.room_history.size() -1);
         this.room_location = prev_room;
         System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
      }
 
+    /** method that transports character to next room after entering the correct code
+     * @param String code
+     */
     public void enterCode(String code){
         try{
             if (!code.equals(this.room_location.getCode())){
