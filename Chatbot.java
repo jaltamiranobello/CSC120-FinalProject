@@ -12,7 +12,6 @@ public class Chatbot {
             }
 
         }
-<<<<<<< HEAD
         else if (command.contains("walk")){
             if(command.contains("north")){
                 c.walk("North");
@@ -30,9 +29,6 @@ public class Chatbot {
                 System.out.println("Sorry, this is not a valid direction.");
             }
 
-=======
-        else if (){
->>>>>>> 85c0ebaa0751e71b19ec582108ed6edb4f17c39f
         }
         else if(command.contains("read")){
             c.read();
