@@ -479,8 +479,8 @@ public class Purgatory {
                 break;
             }
             String [] split_words = input.split(" ");
-            List <String> s_w = Arrays.asList(split_words);
-            ArrayList <String> words = new ArrayList<String>(s_w);
+            List <String> fixedLengthList = Arrays.asList(split_words);
+            ArrayList <String> words = new ArrayList<String>(fixedLengthList);
             Chatbot.checkUserResponse(jessica, words);
             }
         
