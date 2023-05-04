@@ -433,8 +433,8 @@ public class Chatbot {
             System.out.println("Enter code: ");
             Scanner response = new Scanner(System.in);
             String input = response.nextLine();
-            response.close();
             c.enterCode(input);
+            response.close();
         }
         else{
             System.out.println("This is not a valid command.");
