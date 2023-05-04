@@ -203,11 +203,14 @@ public class Chatbot {
         else if(command.contains("view") & command.contains("notes")){
             c.viewnotes();
         }
-        else if( (command.contains("pick")) & (command.contains("up")) & (command.contains("letter"))){
+        else if((command.contains("pick")) & (command.contains("up")) & (command.contains("letter"))){
             c.pickup_letter();
         }
-        else if ( (command.contains("put")) & (command.contains("down")) & (command.contains("letter"))){
+        else if ((command.contains("put")) & (command.contains("down")) & (command.contains("letter"))){
             c.putDown_letter();
+        }
+        else if (command.contains("help")) {
+            c.help();
         }
 
         else if (command.contains("grab")){
