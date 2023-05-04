@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 public class Kitchen extends Room {
     private ArrayList<Furniture> objects;
 

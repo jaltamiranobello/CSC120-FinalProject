@@ -1,8 +1,11 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Purgatory {
     
-    //attributes for purgatory class
+    //objects in purgatory class
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     public static Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     public static Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
@@ -250,10 +253,7 @@ public class Purgatory {
             }
         }
 
-        Scanner whichFurn = new Scanner(System.in);
-        String furniture = whichFurn.nextLine();
-
-        public static Furniture whichFurniture(Character c, String furniture){
+        public static Furniture whichFurniture(String furniture){
             String f = furniture.toLowerCase();
             if (f == "desk") {
                 Furniture x = bd_1;
@@ -272,11 +272,11 @@ public class Purgatory {
                 return x;
             }
             else if (f == "toy chest") {
-                if (c.room_location == toyroom_easy){
+                if (jessica.room_location == toyroom_easy){
                     Furniture x = t_easy_1;
                     return x;
                 }
-                else if(c.room_location == toyroom_med ){
+                else if(jessica.room_location == toyroom_med ){
                     Furniture x = t_med_1;
                     return x;
                 }
@@ -286,11 +286,11 @@ public class Purgatory {
                 }
             }
             else if (f == "barbie house"){
-                if (c.room_location == toyroom_easy){
+                if (jessica.room_location == toyroom_easy){
                     Furniture x = t_easy_2;
                     return x;
                 }
-                else if(c.room_location == toyroom_med ){
+                else if(jessica.room_location == toyroom_med ){
                     Furniture x = t_med_2;
                     return x;
                 }
@@ -300,11 +300,11 @@ public class Purgatory {
                 }
             }
             else if (f == "craft table"){
-                if (c.room_location == toyroom_easy){
+                if (jessica.room_location == toyroom_easy){
                     Furniture x = t_easy_3;
                     return x;
                 }
-                else if(c.room_location == toyroom_med ){
+                else if(jessica.room_location == toyroom_med ){
                     Furniture x = t_med_3;
                     return x;
                 }
@@ -314,11 +314,11 @@ public class Purgatory {
                 }
             }
             else if (f == "lego box"){
-                if (c.room_location == toyroom_easy){
+                if (jessica.room_location == toyroom_easy){
                     Furniture x = t_easy_4;
                     return x;
                 }
-                else if(c.room_location == toyroom_med ){
+                else if(jessica.room_location == toyroom_med ){
                     Furniture x = t_med_4;
                     return x;
                 }
@@ -328,11 +328,11 @@ public class Purgatory {
                 }
             }
             else if (f == "dishwasher"){
-                if (c.room_location == kitchen_easy){
+                if (jessica.room_location == kitchen_easy){
                     Furniture x = k_easy_1;
                     return x;
                 }
-                else if(c.room_location == kitchen_med){
+                else if(jessica.room_location == kitchen_med){
                     Furniture x = k_med_1;
                     return x;
                 }
@@ -342,11 +342,11 @@ public class Purgatory {
                 }
             }
             else if (f == "microwave"){
-                if (c.room_location == kitchen_easy){
+                if (jessica.room_location == kitchen_easy){
                     Furniture x = k_easy_2;
                     return x;
                 }
-                else if(c.room_location == kitchen_med){
+                else if(jessica.room_location == kitchen_med){
                     Furniture x = k_med_2;
                     return x;
                 }
@@ -356,11 +356,11 @@ public class Purgatory {
                 }
             }
             else if (f == "oven"){
-                if (c.room_location == kitchen_easy){
+                if (jessica.room_location == kitchen_easy){
                     Furniture x = k_easy_3;
                     return x;
                 }
-                else if(c.room_location == kitchen_med){
+                else if(jessica.room_location == kitchen_med){
                     Furniture x = k_med_3;
                     return x;
                 }
@@ -370,11 +370,11 @@ public class Purgatory {
                 }
             }
             else if (f == "pantry"){
-                if (c.room_location == kitchen_easy){
+                if (jessica.room_location == kitchen_easy){
                     Furniture x = k_easy_4;
                     return x;
                 }
-                else if(c.room_location == kitchen_med){
+                else if(jessica.room_location == kitchen_med){
                     Furniture x = k_med_4;
                     return x;
                 }
@@ -384,11 +384,11 @@ public class Purgatory {
                 }
             }
             else if (f == "toilet"){
-                if (c.room_location == bathroom_easy){
+                if (jessica.room_location == bathroom_easy){
                     Furniture x = b_easy_1;
                     return x;
                 }
-                else if(c.room_location == bathroom_med){
+                else if(jessica.room_location == bathroom_med){
                     Furniture x = b_med_1;
                     return x;
                 }
@@ -398,11 +398,11 @@ public class Purgatory {
                 }
             }
             else if (f == "medicine cabinet"){
-                if (c.room_location == bathroom_easy){
+                if (jessica.room_location == bathroom_easy){
                     Furniture x = b_easy_2;
                     return x;
                 }
-                else if(c.room_location == bathroom_med){
+                else if(jessica.room_location == bathroom_med){
                     Furniture x = b_med_2;
                     return x;
                 }
@@ -412,11 +412,11 @@ public class Purgatory {
                 }
             }
             else if (f == "trash can"){
-                if (c.room_location == bathroom_easy){
+                if (jessica.room_location == bathroom_easy){
                     Furniture x = b_easy_3;
                     return x;
                 }
-                else if(c.room_location == bathroom_med){
+                else if(jessica.room_location == bathroom_med){
                     Furniture x = b_med_3;
                     return x;
                 }
@@ -426,11 +426,11 @@ public class Purgatory {
                 }
             }
             else if (f == "shower"){
-                if (c.room_location == bathroom_easy){
+                if (jessica.room_location == bathroom_easy){
                     Furniture x = b_easy_4;
                     return x;
                 }
-                else if(c.room_location == bathroom_med){
+                else if(jessica.room_location == bathroom_med){
                     Furniture x = b_med_4;
                     return x;
                 }
@@ -451,9 +451,12 @@ public class Purgatory {
                 Furniture x = lr_3;
                 return x;
             }
-            else {
+            else if (f == "bookshelf"){
                 Furniture x = lr_4;
                 return x;
+            }
+            else{
+                throw new RuntimeException("This is not something you can open or close.");
             }
         }
 
@@ -464,7 +467,20 @@ public class Purgatory {
         String user_input = response.nextLine();
         if (user_input.equals("start") | user_input.equals("START") | user_input.equals("Start")) {
             System.out.println(bedroom.toString());
+
+            Scanner response_2 = new Scanner(System.in);
+            String user_input_2 = response_2.nextLine();
+            String [] split_words = user_input_2.toLowerCase().split(" ");
+            List <String> s_w = Arrays.asList(split_words);
+            ArrayList <String> words = new ArrayList<String>(s_w);
+            Chatbot.checkUserResponse(jessica, words);
+            response_2.close();
+            
+            
         }
+
+        //Scanner whichFurn = new Scanner(System.in);
+        //String furniture = whichFurn.nextLine();
         response.close();
     }
 
