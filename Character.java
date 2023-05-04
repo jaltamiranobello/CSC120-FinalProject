@@ -104,15 +104,15 @@ public class Character {
             else if (f.getLetter() != null & f.getSpecialItem() == null){
                 f.open_status = true;
                 this.current_f = f;
-                System.out.println("This " + f.getType() + " has a letter inside. Maybe you want to read the letter, maybe you don't - your choice 😉...");
+                System.out.println("This " + f.getType() + " has a letter inside. Maybe you want to pick up the letter, maybe you don't - your choice 😉...");
             }
             else if (f.getLetter() == null & f.getSpecialItem() != null){
                 f.open_status = true;
                 this.current_f = f;
-                System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab or ignore it 😌.....");
+                System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab and keep or drop it 😌.....");
             }
             else {
-                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to pick up the letter, maybe you want to grab or ignore the " + f.getSpecialItem() + "- your choice 😉");
+                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to pick up the letter, and maybe you want to grab the " + f.getSpecialItem() + "- your choice 😉");
                 this.current_f = f;
             } 
         } 
@@ -180,7 +180,7 @@ public class Character {
             }
             this.held_items.add(this.current_f.getLetter());
             this.current_letter = this.current_f.getLetter();
-            System.out.println(this.name + " is now holding the letter." + this.name + " can read it or not.");
+            System.out.println(this.name + " is now holding the letter. " + this.name + " can read it or not.");
         } catch(Exception e){
             System.out.println(e);
         }
