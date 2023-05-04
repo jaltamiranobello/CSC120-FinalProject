@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Chatbot {
 
-    public static void checkUserResponse(Character c, ArrayList<String> command){
+    public static void checkUserResponse(Character c, ArrayList<String> command, Scanner response){
         if (command.contains("open")){
             if (command.contains("desk")){
                Furniture x = Purgatory.whichFurniture("desk");
@@ -431,10 +431,11 @@ public class Chatbot {
         }
         else if(command.contains("enter") & command.contains("code")){
             System.out.println("Enter code: ");
-            Scanner response = new Scanner(System.in);
+
+            //Scanner response = new Scanner(System.in);
             String input = response.nextLine();
             c.enterCode(input);
-            response.close();
+            //response.close();
         }
         else{
             System.out.println("This is not a valid command.");

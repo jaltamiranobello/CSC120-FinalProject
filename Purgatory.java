@@ -471,17 +471,17 @@ public class Purgatory {
         
         boolean go = true;
         while(go){
-            Scanner response_2 = new Scanner(System.in);
-            String user_input_2 = response_2.nextLine();
+            //Scanner response_2 = new Scanner(System.in);
+            String user_input_2 = response.nextLine();
             String input = user_input_2.toLowerCase();
             if (input.equals("stop")){
-                response_2.close();
+                //response_2.close();
                 break;
             }
             String [] split_words = input.split(" ");
             List <String> fixedLengthList = Arrays.asList(split_words);
             ArrayList <String> words = new ArrayList<String>(fixedLengthList);
-            Chatbot.checkUserResponse(jessica, words);
+            Chatbot.checkUserResponse(jessica, words, response);
             }
         
              
