@@ -109,10 +109,10 @@ public class Character {
             else if (f.getLetter() == null & f.getSpecialItem() != null){
                 f.open_status = true;
                 this.current_f = f;
-                System.out.println("This " + f.getType() + " has a/an " + f.getSpecialItem() + " inside. Grab and keep or drop it 😌.....");
+                System.out.println("This " + f.getType() + " has (a/an) " + f.getSpecialItem() + " inside. Grab and keep or drop it 😌.....");
             }
             else {
-                System.out.println("This " + f.getType() + " has a letter and a/an " + f.getSpecialItem() + ". Maybe you want to pick up the letter, and maybe you want to grab the " + f.getSpecialItem() + "- your choice 😉");
+                System.out.println("This " + f.getType() + " has a letter and (a/an) " + f.getSpecialItem() + ". Maybe you want to pick up the letter, and maybe you want to grab the " + f.getSpecialItem() + "- your choice 😉");
                 this.current_f = f;
             } 
         } 
