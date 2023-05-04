@@ -8,13 +8,11 @@ public class Chatbot {
               Furniture x = Purgatory.whichFurniture("barbie house");
               c.open(x);
             }
-            else if {
-
+            else if (){
             }
 
         }
         else if (){
-    
         }
     }
 
