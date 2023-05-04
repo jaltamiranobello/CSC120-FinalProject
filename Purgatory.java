@@ -465,24 +465,28 @@ public class Purgatory {
         System.out.print("Welcome to Purgatory! You will be playing with the character named Jessica. To start playing, enter start: ");
         Scanner response = new Scanner(System.in);
         String user_input = response.nextLine();
-        if (user_input.equals("start") | user_input.equals("START") | user_input.equals("Start")) {
+        String l_user_input = user_input.toLowerCase();
+        if (l_user_input.equals("start")) {
             System.out.println(bedroom.toString());
-
+        
+        boolean go = true;
+        while(go){
             Scanner response_2 = new Scanner(System.in);
             String user_input_2 = response_2.nextLine();
-            String [] split_words = user_input_2.toLowerCase().split(" ");
+            String input = user_input_2.toLowerCase();
+            if (input.equals("stop")){
+                response_2.close();
+                break;
+            }
+            String [] split_words = input.split(" ");
             List <String> s_w = Arrays.asList(split_words);
             ArrayList <String> words = new ArrayList<String>(s_w);
             Chatbot.checkUserResponse(jessica, words);
-            response_2.close();
-            
-            
+            }
+        
+             
         }
-
-        //Scanner whichFurn = new Scanner(System.in);
-        //String furniture = whichFurn.nextLine();
         response.close();
     }
-
-    }
+}
 
