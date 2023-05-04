@@ -12,8 +12,38 @@ public class Chatbot {
             }
 
         }
-        else if (){
+        else if (command.contains("walk")){
+            if(command.contains("north")){
+                c.walk("North");
+            }
+            else if (command.contains("south")){
+                c.walk("South");
+            }
+            else if(command.contains("east")){
+                c.walk("East");
+            }
+            else if(command.contains("west")){
+                c.walk("West");
+            }
+            else{
+                System.out.println("Sorry, this is not a valid direction.");
+            }
 
+        }
+        else if(command.contains("read")){
+            c.read();
+        }
+        else if (command.contains("write")){
+            c.write();
+        }
+        else if(command.contains("view") & command.contains("notes")){
+            c.viewnotes();
+        }
+        else if( (command.contains("pick")) & (command.contains("up")) & (command.contains("letter"))){
+            c.pickup_letter();
+        }
+        else if ( (command.contains("put")) & (command.contains("down")) & (command.contains("letter"))){
+            c.putDown_letter();
         }
     }
 
