@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Purgatory {
     
+    //attributes for purgatory class
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     public static Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     public static Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
