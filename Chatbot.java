@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Chatbot {
 
@@ -427,6 +428,16 @@ public class Chatbot {
             else{
                 System.out.println("Sorry, that is not a valid item.");
             }
+        }
+        else if(command.contains("enter") & command.contains("code")){
+            System.out.println("Enter code: ");
+            Scanner response = new Scanner(System.in);
+            String input = response.nextLine();
+            response.close();
+            c.enterCode(input);
+        }
+        else{
+            System.out.println("This is not a valid command.");
         }
     }
 
