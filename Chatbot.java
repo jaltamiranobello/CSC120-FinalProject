@@ -85,7 +85,7 @@ public class Chatbot {
                      c.open(x);
                    }
             else{
-                    System.out.println("Sorry this is not a valid furniture to be opened.");
+                    System.out.println("Sorry that is not a valid furniture to be opened.");
                    }
             }
 
@@ -171,7 +171,7 @@ public class Chatbot {
                      c.close(x);
                    }
             else{
-                     System.out.println("Sorry this is not a valid furniture to be closed.");
+                     System.out.println("Sorry that is not a valid furniture to be closed.");
                    }
             }
        
@@ -189,10 +189,11 @@ public class Chatbot {
                 c.walk("West");
             }
             else{
-                System.out.println("Sorry, this is not a valid direction.");
+                System.out.println("Sorry, that is not a valid direction.");
             }
 
         }
+
         else if(command.contains("read")){
             c.read();
         }
@@ -207,6 +208,222 @@ public class Chatbot {
         }
         else if ( (command.contains("put")) & (command.contains("down")) & (command.contains("letter"))){
             c.putDown_letter();
+        }
+
+        else if (command.contains("grab")){
+            if (command.contains("binoculars")){
+                c.grab("binoculars");
+            }
+            else if (command.contains("phone")){
+                c.grab("phone");
+            }
+            else if (command.contains("lily's") & command.contains("schedule")){
+                c.grab("lily's schedule");
+            }
+            else if (command.contains("teddy") & command.contains("bear")){
+                c.grab("teddy bear");
+            }
+            else if (command.contains("lipstick")){
+                c.grab("lipstick");
+            }
+            else if (command.contains("toy") & command.contains("camera")){
+                c.grab("toy camera");
+            }
+            else if (command.contains("flowers")){
+                c.grab("flowers");
+            }
+            else if (command.contains("locket")){
+                c.grab("locket");
+            }
+            else if (command.contains("medicine") & command.contains("pamphlet")){
+                c.grab("medicine pamphlet");
+            }
+            else if (command.contains("bowl") & command.contains("with") & command.contains("traces") & command.contains("of") & command.contains("unknown") & command.contains("substance")){
+                c.grab("bowl with traces of unknown substance");
+            }
+            else if (command.contains("cake")){
+                c.grab("cake");
+            }
+            else if (command.contains("pharmacy") & command.contains("card")){
+                c.grab("pharmacy card");
+            }
+            else if (command.contains("tea") & command.contains("cup")){
+                c.grab("tea cup");
+            }
+            else if (command.contains("purse")){
+                c.grab("purse");
+            }
+            else if (command.contains("hair") & command.contains("pin")){
+                c.grab("hair pin");
+            }
+            else if (command.contains("medicine") & command.contains("bottle")){
+                c.grab("medicine bottle");
+            }
+            else if (command.contains("pills")){
+                c.grab("pills");
+            }
+            else if (command.contains("necklace")){
+                c.grab("necklace");
+            }
+            else if (command.contains("straightener")){
+                c.grab("straightener");
+            }
+            else if (command.contains("hairbrush")){
+                c.grab("hairbrush");
+            }
+            else if (command.contains("picture") & command.contains("of") & command.contains("lily")){
+                c.grab("picture of lily");
+            }
+            else if (command.contains("glass") & command.contains("vase") & command.contains("shard")){
+                c.grab("glass vase shard");
+            }
+            else{
+                System.out.println("Sorry, that is not a valid item.");
+            }
+        }
+
+        else if (command.contains("keep")){
+            if (command.contains("binoculars")){
+                c.keep("binoculars");
+            }
+            else if (command.contains("phone")){
+                c.keep("phone");
+            }
+            else if (command.contains("lily's") & command.contains("schedule")){
+                c.keep("lily's schedule");
+            }
+            else if (command.contains("teddy") & command.contains("bear")){
+                c.keep("teddy bear");
+            }
+            else if (command.contains("lipstick")){
+                c.keep("lipstick");
+            }
+            else if (command.contains("toy") & command.contains("camera")){
+                c.keep("toy camera");
+            }
+            else if (command.contains("flowers")){
+                c.keep("flowers");
+            }
+            else if (command.contains("locket")){
+                c.keep("locket");
+            }
+            else if (command.contains("medicine") & command.contains("pamphlet")){
+                c.keep("medicine pamphlet");
+            }
+            else if (command.contains("bowl") & command.contains("with") & command.contains("traces") & command.contains("of") & command.contains("unknown") & command.contains("substance")){
+                c.keep("bowl with traces of unknown substance");
+            }
+            else if (command.contains("cake")){
+                c.keep("cake");
+            }
+            else if (command.contains("pharmacy") & command.contains("card")){
+                c.keep("pharmacy card");
+            }
+            else if (command.contains("tea") & command.contains("cup")){
+                c.keep("tea cup");
+            }
+            else if (command.contains("purse")){
+                c.keep("purse");
+            }
+            else if (command.contains("hair") & command.contains("pin")){
+                c.keep("hair pin");
+            }
+            else if (command.contains("medicine") & command.contains("bottle")){
+                c.keep("medicine bottle");
+            }
+            else if (command.contains("pills")){
+                c.keep("pills");
+            }
+            else if (command.contains("necklace")){
+                c.keep("necklace");
+            }
+            else if (command.contains("straightener")){
+                c.keep("straightener");
+            }
+            else if (command.contains("hairbrush")){
+                c.keep("hairbrush");
+            }
+            else if (command.contains("picture") & command.contains("of") & command.contains("lily")){
+                c.keep("picture of lily");
+            }
+            else if (command.contains("glass") & command.contains("vase") & command.contains("shard")){
+                c.keep("glass vase shard");
+            }
+            else{
+                System.out.println("Sorry, that is not a valid item.");
+            }
+        }
+
+        else if (command.contains("drop")){
+            if (command.contains("binoculars")){
+                c.drop("binoculars");
+            }
+            else if (command.contains("phone")){
+                c.drop("phone");
+            }
+            else if (command.contains("lily's") & command.contains("schedule")){
+                c.drop("lily's schedule");
+            }
+            else if (command.contains("teddy") & command.contains("bear")){
+                c.drop("teddy bear");
+            }
+            else if (command.contains("lipstick")){
+                c.drop("lipstick");
+            }
+            else if (command.contains("toy") & command.contains("camera")){
+                c.drop("toy camera");
+            }
+            else if (command.contains("flowers")){
+                c.drop("flowers");
+            }
+            else if (command.contains("locket")){
+                c.drop("locket");
+            }
+            else if (command.contains("medicine") & command.contains("pamphlet")){
+                c.drop("medicine pamphlet");
+            }
+            else if (command.contains("bowl") & command.contains("with") & command.contains("traces") & command.contains("of") & command.contains("unknown") & command.contains("substance")){
+                c.drop("bowl with traces of unknown substance");
+            }
+            else if (command.contains("cake")){
+                c.drop("cake");
+            }
+            else if (command.contains("pharmacy") & command.contains("card")){
+                c.drop("pharmacy card");
+            }
+            else if (command.contains("tea") & command.contains("cup")){
+                c.drop("tea cup");
+            }
+            else if (command.contains("purse")){
+                c.drop("purse");
+            }
+            else if (command.contains("hair") & command.contains("pin")){
+                c.drop("hair pin");
+            }
+            else if (command.contains("medicine") & command.contains("bottle")){
+                c.drop("medicine bottle");
+            }
+            else if (command.contains("pills")){
+                c.drop("pills");
+            }
+            else if (command.contains("necklace")){
+                c.drop("necklace");
+            }
+            else if (command.contains("straightener")){
+                c.drop("straightener");
+            }
+            else if (command.contains("hairbrush")){
+                c.drop("hairbrush");
+            }
+            else if (command.contains("picture") & command.contains("of") & command.contains("lily")){
+                c.drop("picture of lily");
+            }
+            else if (command.contains("glass") & command.contains("vase") & command.contains("shard")){
+                c.drop("glass vase shard");
+            }
+            else{
+                System.out.println("Sorry, that is not a valid item.");
+            }
         }
     }
 
