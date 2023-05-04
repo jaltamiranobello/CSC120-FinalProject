@@ -192,7 +192,7 @@ public class Character {
     public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
-                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the " + special_item + ".");
+                throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop/keep an object in order to pick up the " + special_item + ".");
             }
             this.held_items.add(special_item);
             System.out.println(this.name + " picked up a/an " + special_item + ". Maybe you want to keep it or not 😈....");
