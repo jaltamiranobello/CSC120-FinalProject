@@ -177,12 +177,16 @@ public class Character {
     /** method that picks up a letter to be able to read it based off the furniture that is opened */
     public void pickup_letter(){
         try{
-            if (this.held_items.size()==2){
+            if (this.held_items.size() == 2){
+                System.out.println("This is what " + this.name + " is currently holding: " + this.held_items.toString());
                 throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the letter.");
+            }
+            else if (this.held_items.get(0) instanceof Letter | this.held_items.get(1) instanceof Letter){
+                throw new RuntimeException(this.name + " has a letter hands in her hand at the moment, to pick up this letter you MUST put down the previous letter.");
             }
             this.held_items.add(this.current_f.getLetter());
             this.current_letter = this.current_f.getLetter();
-            System.out.println(this.name + " is now holding the letter. " + this.name + " can read it or not.");
+            System.out.println(this.name + " is now holding the letter. " + this.name + " can read it or not. If you choose not to read it you MUST put down the letter.");
         } catch(Exception e){
             System.out.println(e);
         }
@@ -194,10 +198,12 @@ public class Character {
     public void grab(String special_item){
         try{
             if (this.held_items.size() == 2){
+                System.out.println("This is what " + this.name + " is currently holding: " + this.held_items.toString());
                 throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop/keep an object in order to pick up the " + special_item + ".");
             }
             this.held_items.add(special_item);
             System.out.println(this.name + " picked up a/an " + special_item + ". Maybe you want to keep it or not 😈....");
+            System.out.println("This is what " + this.name + " is currently holding: " + this.held_items.toString());
         }
         catch(Exception e){
             System.out.println(e);
