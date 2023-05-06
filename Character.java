@@ -322,7 +322,7 @@ public class Character {
     public void goback(){
         try{
             if (this.room_location instanceof Bedroom){
-                throw new RuntimeException("This is where " + this.name + " started; cannot go back to a previous room.")
+                throw new RuntimeException("This is where " + this.name + " started; cannot go back to a previous room.");
             }
             Room prev_room =  this.room_history.get(this.room_history.size() -1);
             this.room_location = prev_room;
