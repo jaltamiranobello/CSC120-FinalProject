@@ -140,14 +140,14 @@ public class Character {
         }
     }
 
-    /** method that prints the text of a letter after it was picked up */
+    /** method that prints the text of a letter after it was picked up and drops it*/
     public void read(){
         try{
             if(this.current_letter.getText()== "N/A"){
                 throw new RuntimeException(this.name+ " has yet to pick up a letter.");
         }
         System.out.println("The letter states the following: " + this.current_letter.getText());
-        System.out.println("Maybe you want to write this in your notebook or not....");
+        System.out.println("Maybe you want to write this in your notebook or not. If you choose to not write anything down you should put down the letter.");
         } catch(Exception e){
             System.out.println(e);
         }
@@ -157,6 +157,7 @@ public class Character {
     public void write(){
         this.notes.add(this.current_letter.getText());
         System.out.println(this.name + " has written " + this.current_letter.getText() + " in their notebook.");
+        System.out.println("Now that you are done with this letter you should put down the letter.");
     }
 
     /** method that views the notes in arraylist notes */
