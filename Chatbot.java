@@ -431,11 +431,8 @@ public class Chatbot {
         }
         else if(command.contains("enter") & command.contains("code")){
             System.out.println("Enter code: ");
-
-            //Scanner response = new Scanner(System.in);
             String input = response.nextLine();
             c.enterCode(input);
-            //response.close();
         }
         else{
             System.out.println("This is not a valid command.");

@@ -315,13 +315,21 @@ public class Character {
         System.out.println("Pick Up a Letter\nPut Down a Letter\nRead a letter\nWrite down notes containing the information of a letter\nView notes");
         System.out.println("Grab/Keep/Drop Special Items(Binoculars, Phone, Lily's Schedule, Teddy Bear, Lipstick, Toy Camera, Flowers, Locket, Medicine Pamphlet, Bowl with traces of unknown substance, Cake, Pharmacy Card, Tea Cup, Purse, Hair Pin, Medicine Bottle, Pills, Necklace, Straightener, Hairbrush, Picture of Lily, Glass Vase Shard)");
         System.out.println("Turn on Light\nEnter code to exit a room");
+        System.out.println("Go back to previous room.");
     }
 
     /** method that transports the character to the previous room */
     public void goback(){
-        Room prev_room =  this.room_history.get(this.room_history.size() -1);
-        this.room_location = prev_room;
-        System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
+        try{
+            if (this.room_location instanceof Bedroom){
+                throw new RuntimeException("This is where " + this.name + " started; cannot go back to a previous room.")
+            }
+            Room prev_room =  this.room_history.get(this.room_history.size() -1);
+            this.room_location = prev_room;
+            System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
+        } catch(Exception e){
+            System.out.println(e);
+        }
      }
 
     /** method that transports character to next room after entering the correct code
@@ -331,6 +339,9 @@ public class Character {
         try{
             if (!code.equals(this.room_location.getCode())){
                 throw new RuntimeException("Wrong code try again...");
+            }
+            else if(this.held_items.size() == 1 | this.held_items.size() == 2){
+                throw new RuntimeException("The code you entered is correct but " + this.name + " may not leave the room until she has dropped all the items in her hand. Drop items and then re-enter the code to the leave the room.");
             }
             System.out.println("The code is correct." + this.name + " has left the room." );
             Purgatory.nextRoom(this);
