@@ -31,6 +31,12 @@ public class Character {
         this.room_location = room_location;
         this.current_letter = new Letter("N/A");
         this.current_f = new Furniture ("FAKE", "N/A");
+        this.collected_items = new ArrayList<>();
+        this.collected_items_bd = new ArrayList<>();
+        this.collected_items_tyr = new ArrayList<>();
+        this.collected_items_kch = new ArrayList<>();
+        this.collected_items_bth = new ArrayList<>();
+        this.collected_items_lr = new ArrayList<>();
     }
 
     /** getter for arraylist notes */
@@ -93,25 +99,29 @@ public class Character {
             if(!this.position.equals(f.direction)){
                 throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is not in her vicinity. Find where it is first.");
             }
+
             else if (f.open_status == true){
                 throw new RuntimeException(this.name + " can't open " + f.getType() + " because it is already open.");
             }
+
             else if (f.getLetter() == null & f.getSpecialItem() == null) {
                 f.open_status = true;
-                this.current_f = f;
                 System.out.println("This " + f.getType() + " has nothing inside");
             }
+
             else if (f.getLetter() != null & f.getSpecialItem() == null){
                 f.open_status = true;
                 this.current_f = f;
                 System.out.println("This " + f.getType() + " has a letter inside. Maybe you want to pick up the letter, maybe you don't - your choice 😉...");
             }
+            
             else if (f.getLetter() == null & f.getSpecialItem() != null){
                 f.open_status = true;
                 this.current_f = f;
                 System.out.println("This " + f.getType() + " has (a/an) " + f.getSpecialItem() + " inside. Grab and keep or drop it 😌.....");
             }
             else {
+                f.open_status = true;
                 System.out.println("This " + f.getType() + " has a letter and (a/an) " + f.getSpecialItem() + ". Maybe you want to pick up the letter, and maybe you want to grab the " + f.getSpecialItem() + "- your choice 😉");
                 this.current_f = f;
             } 
@@ -147,7 +157,7 @@ public class Character {
                 throw new RuntimeException(this.name+ " has yet to pick up a letter.");
         }
         System.out.println("The letter states the following: " + this.current_letter.getText());
-        System.out.println("Maybe you want to write this in your notebook or not. If you choose to not write anything down you should put down the letter.");
+        System.out.println("Maybe you want to write this in your notebook or not. If you choose to not write anything down you MUST put down the letter.");
         } catch(Exception e){
             System.out.println(e);
         }
@@ -156,8 +166,8 @@ public class Character {
     /** method that adds the letter's text into the arraylist notes and prints that it has been written down */
     public void write(){
         this.notes.add(this.current_letter.getText());
-        System.out.println(this.name + " has written " + this.current_letter.getText() + " in their notebook.");
-        System.out.println("Now that you are done with this letter you should put down the letter.");
+        System.out.println(this.name + " has written (" + this.current_letter.getText() + ") in their notebook.");
+        System.out.println("Now that " + this.name + " is done with the letter she MUST put down the letter.");
     }
 
     /** method that views the notes in arraylist notes */
@@ -178,14 +188,22 @@ public class Character {
     public void pickup_letter(){
         try{
             if (this.held_items.size() == 2){
+                if (this.held_items.get(0) instanceof Letter){
+                    throw new RuntimeException(this.name + " has a letter in her hands at the moment, to pick up this letter you MUST put down the previous letter.");
+                }
+                else if (this.held_items.get(1) instanceof Letter){
+                    throw new RuntimeException(this.name + " has a letter in her hands at the moment, to pick up this letter you MUST put down the previous letter.");
+                }
                 System.out.println("This is what " + this.name + " is currently holding: " + this.held_items.toString());
                 throw new RuntimeException(this.name + " is holding something in each hand. " + this.name + " needs to drop an object in order to pick up the letter.");
             }
-            else if (this.held_items.get(0) instanceof Letter | this.held_items.get(1) instanceof Letter){
-                throw new RuntimeException(this.name + " has a letter hands in her hand at the moment, to pick up this letter you MUST put down the previous letter.");
+            else if (this.held_items.size() == 1){
+                if(this.held_items.get(0) instanceof Letter){
+                    throw new RuntimeException(this.name + " has a letter in her hands at the moment, to pick up this letter you MUST put down the previous letter.");
+                }
             }
-            this.held_items.add(this.current_f.getLetter());
             this.current_letter = this.current_f.getLetter();
+            this.held_items.add(this.current_letter);
             System.out.println(this.name + " is now holding the letter. " + this.name + " can read it or not. If you choose not to read it you MUST put down the letter.");
         } catch(Exception e){
             System.out.println(e);
@@ -215,50 +233,65 @@ public class Character {
      */
     public void keep(String special_item){
         try{
-            if (this.collected_items.contains(special_item)){
-                throw new RuntimeException(this.name + " already has this...");
+            if(!this.held_items.contains(special_item)){
+                throw new RuntimeException(this.name + " must grab the " + special_item + " to keep it.");
             }
-            else if(this.room_location instanceof Bedroom & this.collected_items_bd.size() == 2){
-                throw new RuntimeException(this.name + " can no longer keep special items from bedroom. She has reached the BEDROOM's item capacity.");
+
+            else if (this.collected_items.contains(special_item)){
+                throw new RuntimeException(this.name + " already kept this...");
             }
-            else if(this.room_location instanceof Toyroom & this.collected_items_tyr.size() == 2){
-                throw new RuntimeException(this.name + " can no longer keep special items from toyroom. She has reached the TOYROOM's item capacity.");
-            }
-            else if(this.room_location instanceof Kitchen & this.collected_items_kch.size() == 2){
-                throw new RuntimeException(this.name + " can no longer keep special items from kitchen. She has reached the KITCHEN's item capacity.");
-            }
-            else if(this.room_location instanceof Bathroom & this.collected_items_bth.size() == 2){
-                throw new RuntimeException(this.name + " can no longer keep special items from bathroom. She has reached the BATHROOM's capacity.");
-            }
-            else if(this.room_location instanceof LivingRoom & this.collected_items_lr.size() == 2){
-                throw new RuntimeException(this.name + " can no longer keep special items from living room. She has reached the LIVING ROOM's capacity.");
-            }
+
             else if(this.room_location instanceof Bedroom){
+                if(this.collected_items_bd.size() == 2){
+                    throw new RuntimeException(this.name + " can no longer keep special items from bedroom. She has reached the BEDROOM's item capacity.");
+                }
                 this.collected_items_bd.add(special_item);
                 this.collected_items.add(special_item);
+                this.held_items.remove(special_item);
                 System.out.println(this.name + " kept the " + special_item);
             }
+
             else if(this.room_location instanceof Toyroom){
+                if (this.collected_items_tyr.size() == 2){
+                    throw new RuntimeException(this.name + " can no longer keep special items from toyroom. She has reached the TOYROOM's item capacity.");
+                }
                 this.collected_items_tyr.add(special_item);
                 this.collected_items.add(special_item);
+                this.held_items.remove(special_item);
                 System.out.println(this.name + " kept the " + special_item);
             }
+
             else if(this.room_location instanceof Kitchen){
+                if(this.collected_items_kch.size() == 2){
+                    throw new RuntimeException(this.name + " can no longer keep special items from kitchen. She has reached the KITCHEN's item capacity.");
+                }
                 this.collected_items_kch.add(special_item);
                 this.collected_items.add(special_item);
+                this.held_items.remove(special_item);
                 System.out.println(this.name + " kept the " + special_item);
             }
+
             else if(this.room_location instanceof Bathroom){
+                if(this.collected_items_bth.size() == 2){
+                    throw new RuntimeException(this.name + " can no longer keep special items from bathroom. She has reached the BATHROOM's capacity.");
+                }
                 this.collected_items_bth.add(special_item);
                 this.collected_items.add(special_item);
+                this.held_items.remove(special_item);
                 System.out.println(this.name + " kept the " + special_item);
             }
+
             else if(this.room_location instanceof LivingRoom){
+                if(this.collected_items_lr.size() == 2){
+                    throw new RuntimeException(this.name + " can no longer keep special items from living room. She has reached the LIVING ROOM's capacity.");
+                }
                 this.collected_items_lr.add(special_item);
                 this.collected_items.add(special_item);
+                this.held_items.remove(special_item);
                 System.out.println(this.name + " kept the " + special_item);
             }
-        } catch(Exception e){
+        } 
+        catch(Exception e){
             System.out.println(e);
         }
     }
@@ -270,7 +303,7 @@ public class Character {
                 throw new RuntimeException(this.name + " cannot put down the letter because she does not currently have one");
             }
             this.current_letter = new Letter("N/A");
-            System.out.println(this.name + " has dropped a letter.");
+            System.out.println(this.name + " has dropped the letter.");
         }catch(Exception e){
             System.out.println(e);
         }
