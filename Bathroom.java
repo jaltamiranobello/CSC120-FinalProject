@@ -19,7 +19,7 @@ public class Bathroom extends Room {
     }
 
     public String toString() {
-       String x = "This is a bathroom and it has four pieces of furniture: Toilet, Medicine Cabinet, Trash Can, and Shower. You can chose to retrieve some spectial items in them or not (be weary of your decisions). This room also has a specific code to be able to exit. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room and there is a medicine cabinet here.";
+       String x = "This is a bathroom and it has four pieces of furniture: Toilet, Medicine Cabinet, Trash Can, and Shower. You can chose to retrieve some spectial items in them or not (be weary of your decisions). The code to leave this room has " +  this.getCode().length() + " alphabetical characters. Find the code by exploring the room and the mode of exit. You are currently at the Southern area of the room and there is a medicine cabinet here. Type help to view possible actions.";
        return x;
     }
 

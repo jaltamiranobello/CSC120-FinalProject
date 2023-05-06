@@ -147,6 +147,7 @@ public class Character {
                 throw new RuntimeException(this.name+ " has yet to pick up a letter.");
         }
         System.out.println("The letter states the following: " + this.current_letter.getText());
+        System.out.println("Maybe you want to write this in your notebook or not....");
         } catch(Exception e){
             System.out.println(e);
         }
