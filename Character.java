@@ -310,6 +310,7 @@ public class Character {
             if(this.current_letter.getText() == "N/A"){
                 throw new RuntimeException(this.name + " cannot put down the letter because she does not currently have one");
             }
+            this.held_items.remove(this.current_letter);
             this.current_letter = new Letter("N/A");
             System.out.println(this.name + " has dropped the letter.");
         }catch(Exception e){
@@ -385,6 +386,7 @@ public class Character {
                 throw new RuntimeException("The code you entered is correct but " + this.name + " may not leave the room until she has dropped all the items in her hand. Drop items and then re-enter the code to the leave the room.");
             }
             System.out.println("The code is correct." + this.name + " has left the room." );
+            this.position = "South";
             Purgatory.nextRoom(this);
         }
         catch(Exception e){

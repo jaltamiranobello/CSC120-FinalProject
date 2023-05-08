@@ -211,6 +211,9 @@ public class Chatbot {
             else if(command.contains("collected") & command.contains("items")){
                 c.viewKeptItems();
             }
+            else{
+                System.out.println("Sorry, that it not something "+ c.getName() + " can view.");
+            }
         }
         else if((command.contains("pick")) & (command.contains("up")) & (command.contains("letter"))){
             c.pickup_letter();
@@ -437,10 +440,11 @@ public class Chatbot {
             }
         }
         else if(command.contains("enter") & command.contains("code")){
-            System.out.println("Enter code: ");
+            System.out.println("Enter code here: ");
 
             String input = response.nextLine();
-            c.enterCode(input);
+            String input_lc = input.toLowerCase();
+            c.enterCode(input_lc);
         }
         else{
             System.out.println("This is not a valid command.");
