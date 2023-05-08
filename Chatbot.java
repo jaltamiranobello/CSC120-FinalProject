@@ -201,8 +201,16 @@ public class Chatbot {
         else if (command.contains("write")){
             c.write();
         }
-        else if(command.contains("view") & command.contains("notes")){
-            c.viewnotes();
+        else if(command.contains("view")){
+            if (command.contains("notes")){
+                c.viewnotes();
+            }
+            else if(command.contains("held") & command.contains("items")){
+                c.viewHeldItems();
+            }
+            else if(command.contains("collected") & command.contains("items")){
+                c.viewKeptItems();
+            }
         }
         else if((command.contains("pick")) & (command.contains("up")) & (command.contains("letter"))){
             c.pickup_letter();
@@ -285,7 +293,6 @@ public class Chatbot {
                 System.out.println("Sorry, that is not a valid item.");
             }
         }
-
         else if (command.contains("keep")){
             if (command.contains("binoculars")){
                 c.keep("binoculars");

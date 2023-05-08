@@ -228,6 +228,14 @@ public class Character {
         }
     }
 
+    public void viewHeldItems(){
+        System.out.println(this.name + " current has this in their hands: " + this.held_items.toString());
+    }
+
+    public void viewKeptItems(){
+        System.out.println(this.name + " has kept these items: " + this.collected_items.toString());
+    }
+
     /** method that keeps the special_item after the character grabbed it
      * @param String special_item: the item that the character can keep
      */
