@@ -440,11 +440,9 @@ public class Chatbot {
             }
         }
         else if(command.contains("enter") & command.contains("code")){
-            System.out.println("Enter code here: ");
-
+            System.out.println("Enter code here (in all caps): ");
             String input = response.nextLine();
-            String input_lc = input.toLowerCase();
-            c.enterCode(input_lc);
+            c.enterCode(input);
         }
         else{
             System.out.println("This is not a valid command.");
