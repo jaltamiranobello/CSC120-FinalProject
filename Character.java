@@ -369,13 +369,22 @@ public class Character {
 
     /** method that transports the character to the previous room */
     public void goback(){
+        Room prev_room;
+        int index;
         try{
             if (this.room_location instanceof Bedroom){
                 throw new RuntimeException("This is where " + this.name + " started; cannot go back to a previous room.");
             }
-            Room prev_room =  this.room_history.get(this.room_history.size() -1);
+            else if(this.room_history.size() == 1){
+                index = this.room_history.size() - 1;
+                prev_room = this.room_history.get(index);
+                this.room_location= prev_room;
+                System.out.println(this.name + " is now in the previous room. " + prev_room);
+            }
+            index = this.room_history.size() - 2;
+            prev_room =  this.room_history.get(index);
             this.room_location = prev_room;
-            System.out.println(this.name + " is now in the previous room. " + prev_room.toString());
+            System.out.println(this.name + " is now in the previous room. " + prev_room);
         } catch(Exception e){
             System.out.println(e);
         }
