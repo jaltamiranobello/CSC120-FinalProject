@@ -504,7 +504,6 @@ public class Purgatory {
         if (l_user_input.equals("start")) {
             System.out.println(bedroom.toString());
         
-        // Boolean go = true;
         while(jessica.continue_game){
             String user_input_2 = response.nextLine();
             String input = user_input_2.toLowerCase();
