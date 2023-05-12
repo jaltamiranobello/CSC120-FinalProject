@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Purgatory {
     
-    //objects in purgatory class
+    //Objects in purgatory class
     public static Letter lbd_1 =  new Letter ("ROM are the first three letters of the code");
     public static Letter lbd_2 = new Letter("ANT are the third, fourth, and fifth letters of the code.");
     public static Letter lbd_3 = new Letter("IC are the sixth and seventh letters of the code.");
@@ -131,8 +131,9 @@ public class Purgatory {
     
     public static Character jessica = new Character("Jessica", bedroom);
 
-    /** method that determines which room the character will move onto based on the amount of collected items they have from each room type
+    /** Method that determines which room the character will move onto based on the amount of collected items they have from each room type
      * @param Character c
+     * @return c.continue_game which is a boolean that represents if the character has reached the end of the game
     */
     public static boolean nextRoom(Character c){
         if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 0) {
@@ -218,7 +219,7 @@ public class Purgatory {
         }
     } 
 
-        /** method that checks what furniture is near the character based on the character's position inside the room.
+        /** Method that checks what furniture is near the character based on the character's position inside the room.
          * @param Character c
          */
         public static void nearMe(Character c){
@@ -294,7 +295,7 @@ public class Purgatory {
             }
         }
         
-        /** method that assigns furniture to a specific room so that when character later decides to interact with a furniture it will check what room location they are in and return the furniture that belongs to their room location. 
+        /** Method that assigns furniture to a specific room so that when character later decides to interact with a furniture it will check what room location they are in and return the furniture that belongs to their room location. 
          * @param String furniture
         */
         public static Furniture whichFurniture(String furniture){
@@ -520,17 +521,11 @@ public class Purgatory {
                 System.out.println("Thank you for playing. Hope to see you again.");
                 break;
             }
-            // else if(){
-
-            // }
-            
             String [] split_words = input.split(" ");
             List <String> fixedLengthList = Arrays.asList(split_words);
             ArrayList <String> words = new ArrayList<String>(fixedLengthList);
             Chatbot.checkUserResponse(jessica, words, response);
-            }
-        
-             
+            }         
         }
         response.close();
     }
