@@ -1,14 +1,14 @@
 public class Furniture {
-    // attribute for Furniture class
+    // Attributes for Furniture class
     private String type;
     public boolean open_status;
     private Letter l;
     private String special_item;
     public String direction;
 
-    /** constructor that creates object Furniture
-     * @param String type
-     * @param String direction
+    /** Constructor that creates object Furniture
+     * @param String type: the name of the furniture type
+     * @param String direction: the location of the furniture
     */
     public Furniture(String type, String direction) {
         this.type = type;
@@ -16,10 +16,10 @@ public class Furniture {
         this.direction = direction;
     }
     
-     /** overloaded constructor that creates object Furniture
-     * @param String type
-     * @param String direction
-     * @param Letter l
+     /** Overloaded constructor that creates object Furniture
+     * @param String type: the name of the furniture type
+     * @param String direction: the location of the furniture
+     * @param Letter l: the letter the furniture contains
     */
     public Furniture(String type, String direction, Letter l) {
         this.type = type;
@@ -28,11 +28,11 @@ public class Furniture {
         this.direction = direction;
     }
 
-    /** overloaded constructor that creates object Furniture
-     * @param String type
-     * @param String direction
-     * @param Letter l
-     * @String special_item
+    /** Overloaded constructor that creates object Furniture
+     * @param String type: the name of the furniture type
+     * @param String direction: the location of the furniture
+     * @param Letter l: the letter the furniture contains
+     * @String special_item: the special item in the furniture
     */
     public Furniture(String type, String direction, Letter l, String special_item) {
         this.type = type;
@@ -42,10 +42,10 @@ public class Furniture {
         this.direction = direction;
     }
 
-    /** overloaded constructor that creates object Furniture
-     * @param String type
-     * @param String direction
-     * @String special_item
+    /** Overloaded constructor that creates object Furniture
+     * @param String type: the name of the furniture type
+     * @param String direction: the location of the furniture
+     * @String special_item: the special item in the furniture
     */
     public Furniture(String type, String direction, String special_item) {
         this.type = type;
@@ -54,16 +54,16 @@ public class Furniture {
         this.direction = direction;
     }
 
-    /** getter for type of furniture */
+    /** Getter for type of furniture */
     public String getType() {
         return this.type;
     }
-    /** getter for Letter l */
+    /** Getter for Letter l */
     public Letter getLetter() {
         return this.l;
     }
 
-    /** getter for special_item */
+    /** Getter for special_item */
     public String getSpecialItem() {
         return this.special_item;
     }
