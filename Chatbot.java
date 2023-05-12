@@ -449,6 +449,11 @@ public class Chatbot {
             String input = response.nextLine();
             c.enterCode(input);
         }
+
+        else if(command.contains("go") & command.contains("back")){
+            c.goback();
+        }
+        
         else{
             System.out.println("This is not a valid command.");
         }
