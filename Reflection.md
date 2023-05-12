@@ -1,6 +1,8 @@
 Reflection
+- This game taught us so much about the impact that user interaction has on game making. In our old python game, user interaction wasnt a huge priority since it was only a multiple choice game that didnt require us to think about the possible paths a user can take; it was very black and white. On the other hand, this project is more complex since we have to think about every possible action a user might want to utilize inside an escape room. 
 
 Design justification:
+- 
 
 What was your **overall approach** to tackling this project?
  - What **new thing(s)** did you learn / figure out in completing this project?
