@@ -137,59 +137,69 @@ public class Purgatory {
     public static boolean nextRoom(Character c){
         if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 0) {
             c.room_location = toyroom_hard;
+            c.room_history.add(toyroom_hard);
             System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_hard.toString());
             return c.continue_game;
         }
         else if(c.room_location instanceof Bedroom & c.collected_items_bd.size() == 1) {
             c.room_location = toyroom_med;
+            c.room_history.add(toyroom_med);
             System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_med.toString());
             return c.continue_game;
            
         }
         else if (c.room_location instanceof Bedroom & c.collected_items_bd.size() == 2) {
             c.room_location = toyroom_easy;
+            c.room_history.add(toyroom_easy);
             System.out.println(c.getName() + " is now in a Toyroom. " + toyroom_easy.toString());
             return c.continue_game;
            
         }
         else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 2) {
             c.room_location = kitchen_easy;
+            c.room_history.add(kitchen_easy);
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_easy.toString());
             return c.continue_game;
            
         }
         else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 1) {
             c.room_location = kitchen_med;
+            c.room_history.add(kitchen_med);
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_med.toString());
             return c.continue_game;
           
         }
         else if (c.room_location instanceof Toyroom & c.collected_items_tyr.size() == 0) {
             c.room_location = kitchen_hard;
+            c.room_history.add(kitchen_hard);
             System.out.println(c.getName() + " is now in a Kitchen. " + kitchen_hard.toString());
             return c.continue_game;
             
         }
         else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 2) {
             c.room_location = bathroom_easy;
+            c.room_history.add(bathroom_easy);
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_easy.toString());
             return c.continue_game;
             
         }
         else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 1) {
             c.room_location = bathroom_med;
+            c.room_history.add(bathroom_med);
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_med.toString());
             return c.continue_game;
             
         }
         else if (c.room_location instanceof Kitchen & c.collected_items_kch.size() == 0) {
             c.room_location = bathroom_hard;
+            c.room_history.add(bathroom_hard);
             System.out.println(c.getName() + " is now in a Bathroom. " + bathroom_hard.toString());
             return c.continue_game;
           
         }
         else if (c.room_location instanceof Bathroom){
             c.room_location = livingRoom;
+            c.room_history.add(livingRoom);
             System.out.println(c.getName() + " is now in a Living Room. " + livingRoom.toString());
             return c.continue_game;
            
@@ -210,6 +220,7 @@ public class Purgatory {
             throw new RuntimeException("Something went wrong");
         }
         } 
+
         /** method that checks what furniture is near the character based on the character's position inside the room.
          * @param Character c
          */
@@ -285,6 +296,7 @@ public class Purgatory {
                 }
             }
         }
+        
         /** method that assigns furniture to a specific room so that when character later decides to interact with a furniture it will check what room location they are in and return the furniture that belongs to their room location. 
          * @param String furniture
         */

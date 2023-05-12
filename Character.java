@@ -31,6 +31,8 @@ public class Character {
         this.position = "South";
         this.held_items = new ArrayList<>();
         this.room_location = room_location;
+        this.room_history = new ArrayList<Room>();
+        this.room_history.add(room_location);
         this.current_letter = new Letter("N/A");
         this.current_f = new Furniture ("FAKE", "N/A");
         this.collected_items = new ArrayList<>();
