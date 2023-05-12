@@ -1,16 +1,16 @@
 public class Letter {
-     // attribute for Letter class
+     // Attribute for Letter class
     private String text;
 
-    /** constructor to create a Letter object
-     * @param String text
+    /** Constructor to create a Letter object
+     * @param String text: the text assigned to the letter
     */
     public Letter(String text){
         this.text = text;
     }
 
-    /** getter method that retrieves the text assigned to the Letter object
-     * @param String text
+    /** Getter that retrieves the text assigned to the Letter
+     * @return String: the text from the letter
     */
     public String getText(){
         return this.text;
