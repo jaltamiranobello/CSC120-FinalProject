@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class Chatbot {
 
+    /** method that checks if the user input valid gameplay actions. If they have then the method calls on the character attributes that allow the user to utilize the gameplay action words. 
+     * @param Character c
+     * @param ArrayList<String> command
+     * @param Scanner response
+    */
     public static void checkUserResponse(Character c, ArrayList<String> command, Scanner response){
         if (command.contains("open")){
             if (command.contains("desk")){

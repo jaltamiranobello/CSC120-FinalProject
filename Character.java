@@ -13,6 +13,8 @@ public class Character {
     public ArrayList<String> collected_items_lr;
     public Letter current_letter;
     public Furniture current_f;
+    public Boolean continue_game;
+    
 
     public String position;
     private ArrayList<Object> held_items;
@@ -37,6 +39,7 @@ public class Character {
         this.collected_items_kch = new ArrayList<>();
         this.collected_items_bth = new ArrayList<>();
         this.collected_items_lr = new ArrayList<>();
+        this.continue_game = true;
     }
 
     /** getter for arraylist notes */
@@ -227,11 +230,12 @@ public class Character {
             System.out.println(e);
         }
     }
-
+    /** method that allows the user to see what they are currently holding*/
     public void viewHeldItems(){
         System.out.println(this.name + " current has this in their hands: " + this.held_items.toString());
     }
 
+    /** method that allows the user to see a history log of the items they have kept*/
     public void viewKeptItems(){
         System.out.println(this.name + " has kept these items: " + this.collected_items.toString());
     }
@@ -358,6 +362,7 @@ public class Character {
         System.out.println("Grab/Keep/Drop Special Items(Binoculars, Phone, Lily's Schedule, Teddy Bear, Lipstick, Toy Camera, Flowers, Locket, Medicine Pamphlet, Bowl with traces of unknown substance, Cake, Pharmacy Card, Tea Cup, Purse, Hair Pin, Medicine Bottle, Pills, Necklace, Straightener, Hairbrush, Picture of Lily, Glass Vase Shard)");
         System.out.println("Turn on Light\nEnter code to exit a room");
         System.out.println("Go back to previous room.");
+        System.out.println("Stop to end game.");
     }
 
     /** method that transports the character to the previous room */
@@ -385,7 +390,7 @@ public class Character {
             else if(this.held_items.size() == 1 | this.held_items.size() == 2){
                 throw new RuntimeException("The code you entered is correct but " + this.name + " may not leave the room until she has dropped all the items in her hand. Drop items and then re-enter the code to the leave the room.");
             }
-            System.out.println("The code is correct." + this.name + " has left the room." );
+            System.out.println("The code is correct. " + this.name + " has left the room." );
             this.position = "South";
             Purgatory.nextRoom(this);
         }
