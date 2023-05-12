@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 public class Character {
 
-    // attributes for character class
+    // Attributes for character class
     private String name;
     private ArrayList<String> notes;
-
     public ArrayList<String> collected_items;
     public ArrayList<String> collected_items_bd;
     public ArrayList<String> collected_items_tyr;
@@ -21,9 +20,9 @@ public class Character {
     public Room room_location;
     public ArrayList<Room> room_history;
 
-    /** constructor for character
+    /** Constructor for character
      * @param String name: the name of the character
-     * @Room room_location: the location of the character
+     * @param room_location: the room location of the character
      */
     public Character(String name, Room room_location){
         this.name = name;
@@ -44,23 +43,23 @@ public class Character {
         this.continue_game = true;
     }
 
-    /** getter for arraylist notes */
+    /** Getter for Arraylist notes */
     public ArrayList<String> getNotes(){
         return this.notes;
     }
 
-    /** getter for arraylist held_items */
+    /** Getter for Arraylist held_items */
     public ArrayList<Object> getHeldItems(){
         return this.held_items;
     }
 
-    /** getter for string name */
+    /** Getter for string name */
     public String getName(){
         return this.name;
     }
 
-    /** method that moves the character's position based on the direction they input
-     * @param String direction: the direction the character wants to move
+    /** Method that moves the character's position based on the direction they input
+     * @param String direction: the direction that the character wants to move to
      */
     public void walk(String direction){ 
         try{
@@ -96,8 +95,8 @@ public class Character {
         }
     }
 
-    /** method that opens a piece of furniture and print the objects inside it
-     * @param Furniture f: the furniture that will be opened
+    /** Method that opens a piece of furniture and print the objects inside it
+     * @param Furniture f: the furniture that the character wants to open
      */
     public void open(Furniture f){
         try {
@@ -136,8 +135,8 @@ public class Character {
         }
     }
 
-    /** method that closes a piece of furniture that was opened
-     * @param Furniture f: the furniture that will be closed
+    /** Method that closes a piece of furniture that was opened
+     * @param Furniture f: the furniture that the character wants to close
      */
     public void close(Furniture f){
         try {
@@ -155,7 +154,7 @@ public class Character {
         }
     }
 
-    /** method that prints the text of a letter after it was picked up and drops it*/
+    /** Method that prints the text of a letter after it was picked up and drops it*/
     public void read(){
         try{
             if(this.current_letter.getText()== "N/A"){
@@ -168,14 +167,14 @@ public class Character {
         }
     }
 
-    /** method that adds the letter's text into the arraylist notes and prints that it has been written down */
+    /** Method that adds the letter's text into the arraylist notes and prints that it has been written down */
     public void write(){
         this.notes.add(this.current_letter.getText());
         System.out.println(this.name + " has written (" + this.current_letter.getText() + ") in their notebook.");
         System.out.println("Now that " + this.name + " is done with the letter she MUST put down the letter.");
     }
 
-    /** method that views the notes in arraylist notes */
+    /** Method that views the notes in arraylist notes */
     public void viewnotes(){
         try{
             if (this.notes.isEmpty()){
@@ -189,7 +188,7 @@ public class Character {
         }
     }
 
-    /** method that picks up a letter to be able to read it based off the furniture that is opened */
+    /** Method that picks up a letter to be able to read it based off the furniture that is opened */
     public void pickup_letter(){
         try{
             if (this.held_items.size() == 2){
@@ -215,8 +214,8 @@ public class Character {
         }
     }
 
-    /** method that grabs a special_item but wont let the character grab more than 2 items
-     * @param String special_item: the item that the character can grab
+    /** Method that grabs a special_item but wont let the character grab more than 2 items
+     * @param String special_item: the item that the character wants to grab
      */
     public void grab(String special_item){
         try{
@@ -232,18 +231,19 @@ public class Character {
             System.out.println(e);
         }
     }
-    /** method that allows the user to see what they are currently holding*/
+
+    /** Method that allows the user to see what they are currently holding*/
     public void viewHeldItems(){
         System.out.println(this.name + " current has this in their hands: " + this.held_items.toString());
     }
 
-    /** method that allows the user to see a history log of the items they have kept*/
+    /** Method that allows the user to see a history log of the items they have kept*/
     public void viewKeptItems(){
         System.out.println(this.name + " has kept these items: " + this.collected_items.toString());
     }
 
-    /** method that keeps the special_item after the character grabbed it
-     * @param String special_item: the item that the character can keep
+    /** Method that keeps the special_item after the character grabbed it
+     * @param String special_item: the item that the character wants to keep
      */
     public void keep(String special_item){
         try{
@@ -310,7 +310,7 @@ public class Character {
         }
     }
 
-    /** method that puts down the letter that was picked up */
+    /** Method that puts down the letter that was picked up */
     public void putDown_letter(){
         try{
             if(this.current_letter.getText() == "N/A"){
@@ -324,8 +324,8 @@ public class Character {
         }
     }
 
-    /** method that drops a special_item that was grabbed since the character chose to not keep it
-     * @param String special_item
+    /** Method that drops a special_item that was grabbed since the character chose to not keep it
+     * @param String special_item: which is the special item that the user wants to drop
      */
     public void drop(String special_item){
         try{
@@ -340,7 +340,7 @@ public class Character {
         }
     }
 
-    /** method that turns on the light in each room */
+    /** Method that turns on the light in each room */
     public void turnLight(){
         try{
             if (this.room_location.light == true){
@@ -355,7 +355,7 @@ public class Character {
         }
     }
 
-    /** method that prints info that can help the character */
+    /** Method that prints info that can help the character */
     public void help(){
         System.out.println("These are the following actions you can utilize to escape the rooms:");
         System.out.println("Walk to a direction(North, South, East, West)");
@@ -367,7 +367,7 @@ public class Character {
         System.out.println("Stop to end game.");
     }
 
-    /** method that transports the character to the previous room */
+    /** Method that transports the character to the previous room */
     public void goback(){
         Room prev_room;
         int index;
@@ -390,8 +390,8 @@ public class Character {
         }
      }
 
-    /** method that transports character to next room after entering the correct code
-     * @param String code
+    /** Method that transports character to next room after entering the correct code
+     * @param String code: which is the user input to attempt to exit a room
      */
     public void enterCode(String code){
         try{

@@ -297,208 +297,209 @@ public class Purgatory {
         
         /** Method that assigns furniture to a specific room so that when character later decides to interact with a furniture it will check what room location they are in and return the furniture that belongs to their room location. 
          * @param String furniture
+         * @return near_furn which is the furniture that the character is near
         */
         public static Furniture whichFurniture(String furniture){
             String f = furniture.toLowerCase();
             if (f == "desk") {
-                Furniture x = bd_1;
-                return x;
+                Furniture near_furn = bd_1;
+                return near_furn;
             }
             else if (f == "nightstand") {
-                Furniture x = bd_2;
-                return x;
+                Furniture near_furn = bd_2;
+                return near_furn;
             }
             else if (f == "dresser") {
-                Furniture x = bd_3;
-                return x;
+                Furniture near_furn = bd_3;
+                return near_furn;
             }
             else if (f == "closet") {
-                Furniture x = bd_4;
-                return x;
+                Furniture near_furn = bd_4;
+                return near_furn;
             }
             else if (f == "toy chest") {
                 if (jessica.room_location == toyroom_easy){
-                    Furniture x = t_easy_1;
-                    return x;
+                    Furniture near_furn = t_easy_1;
+                    return near_furn;
                 }
                 else if(jessica.room_location == toyroom_med ){
-                    Furniture x = t_med_1;
-                    return x;
+                    Furniture near_furn = t_med_1;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = t_hard_1;
-                    return x;
+                    Furniture near_furn = t_hard_1;
+                    return near_furn;
                 }
             }
             else if (f == "barbie house"){
                 if (jessica.room_location == toyroom_easy){
-                    Furniture x = t_easy_2;
-                    return x;
+                    Furniture near_furn = t_easy_2;
+                    return near_furn;
                 }
                 else if(jessica.room_location == toyroom_med ){
-                    Furniture x = t_med_2;
-                    return x;
+                    Furniture near_furn = t_med_2;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = t_hard_2;
-                    return x;
+                    Furniture near_furn = t_hard_2;
+                    return near_furn;
                 }
             }
             else if (f == "craft table"){
                 if (jessica.room_location == toyroom_easy){
-                    Furniture x = t_easy_3;
-                    return x;
+                    Furniture near_furn = t_easy_3;
+                    return near_furn;
                 }
                 else if(jessica.room_location == toyroom_med ){
-                    Furniture x = t_med_3;
-                    return x;
+                    Furniture near_furn = t_med_3;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = t_hard_3;
-                    return x;
+                    Furniture near_furn = t_hard_3;
+                    return near_furn;
                 }
             }
             else if (f == "lego box"){
                 if (jessica.room_location == toyroom_easy){
-                    Furniture x = t_easy_4;
-                    return x;
+                    Furniture near_furn = t_easy_4;
+                    return near_furn;
                 }
                 else if(jessica.room_location == toyroom_med ){
-                    Furniture x = t_med_4;
-                    return x;
+                    Furniture near_furn = t_med_4;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = t_hard_4;
-                    return x;
+                    Furniture near_furn = t_hard_4;
+                    return near_furn;
                 }
             }
             else if (f == "dishwasher"){
                 if (jessica.room_location == kitchen_easy){
-                    Furniture x = k_easy_1;
-                    return x;
+                    Furniture near_furn = k_easy_1;
+                    return near_furn;
                 }
                 else if(jessica.room_location == kitchen_med){
-                    Furniture x = k_med_1;
-                    return x;
+                    Furniture near_furn = k_med_1;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = k_hard_1;
-                    return x;
+                    Furniture near_furn = k_hard_1;
+                    return near_furn;
                 }
             }
             else if (f == "microwave"){
                 if (jessica.room_location == kitchen_easy){
-                    Furniture x = k_easy_2;
-                    return x;
+                    Furniture near_furn = k_easy_2;
+                    return near_furn;
                 }
                 else if(jessica.room_location == kitchen_med){
-                    Furniture x = k_med_2;
-                    return x;
+                    Furniture near_furn = k_med_2;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = k_hard_2;
-                    return x;
+                    Furniture near_furn = k_hard_2;
+                    return near_furn;
                 }
             }
             else if (f == "oven"){
                 if (jessica.room_location == kitchen_easy){
-                    Furniture x = k_easy_3;
-                    return x;
+                    Furniture near_furn = k_easy_3;
+                    return near_furn;
                 }
                 else if(jessica.room_location == kitchen_med){
-                    Furniture x = k_med_3;
-                    return x;
+                    Furniture near_furn = k_med_3;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = k_hard_3;
-                    return x;
+                    Furniture near_furn = k_hard_3;
+                    return near_furn;
                 }
             }
             else if (f == "pantry"){
                 if (jessica.room_location == kitchen_easy){
-                    Furniture x = k_easy_4;
-                    return x;
+                    Furniture near_furn = k_easy_4;
+                    return near_furn;
                 }
                 else if(jessica.room_location == kitchen_med){
-                    Furniture x = k_med_4;
-                    return x;
+                    Furniture near_furn = k_med_4;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = k_hard_4;
-                    return x;
+                    Furniture near_furn = k_hard_4;
+                    return near_furn;
                 }
             }
             else if (f == "toilet"){
                 if (jessica.room_location == bathroom_easy){
-                    Furniture x = b_easy_1;
-                    return x;
+                    Furniture near_furn = b_easy_1;
+                    return near_furn;
                 }
                 else if(jessica.room_location == bathroom_med){
-                    Furniture x = b_med_1;
-                    return x;
+                    Furniture near_furn = b_med_1;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = b_hard_1;
-                    return x;
+                    Furniture near_furn = b_hard_1;
+                    return near_furn;
                 }
             }
             else if (f == "medicine cabinet"){
                 if (jessica.room_location == bathroom_easy){
-                    Furniture x = b_easy_2;
-                    return x;
+                    Furniture near_furn = b_easy_2;
+                    return near_furn;
                 }
                 else if(jessica.room_location == bathroom_med){
-                    Furniture x = b_med_2;
-                    return x;
+                    Furniture near_furn = b_med_2;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = b_hard_2;
-                    return x;
+                    Furniture near_furn = b_hard_2;
+                    return near_furn;
                 }
             }
             else if (f == "trash can"){
                 if (jessica.room_location == bathroom_easy){
-                    Furniture x = b_easy_3;
-                    return x;
+                    Furniture near_furn = b_easy_3;
+                    return near_furn;
                 }
                 else if(jessica.room_location == bathroom_med){
-                    Furniture x = b_med_3;
-                    return x;
+                    Furniture near_furn = b_med_3;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = b_hard_3;
-                    return x;
+                    Furniture near_furn = b_hard_3;
+                    return near_furn;
                 }
             }
             else if (f == "shower"){
                 if (jessica.room_location == bathroom_easy){
-                    Furniture x = b_easy_4;
-                    return x;
+                    Furniture near_furn = b_easy_4;
+                    return near_furn;
                 }
                 else if(jessica.room_location == bathroom_med){
-                    Furniture x = b_med_4;
-                    return x;
+                    Furniture near_furn = b_med_4;
+                    return near_furn;
                 }
                 else {
-                    Furniture x = b_hard_4;
-                    return x;
+                    Furniture near_furn = b_hard_4;
+                    return near_furn;
                 }
             }
             else if (f == "coffee table"){
-                Furniture x = lr_1;
-                return x;
+                Furniture near_furn = lr_1;
+                return near_furn;
             }
             else if (f == "safe"){
-                Furniture x = lr_2;
-                return x;
+                Furniture near_furn = lr_2;
+                return near_furn;
             }
             else if (f == "china cabinet"){
-                Furniture x = lr_3;
-                return x;
+                Furniture near_furn = lr_3;
+                return near_furn;
             }
             else if (f == "bookshelf"){
-                Furniture x = lr_4;
-                return x;
+                Furniture near_furn = lr_4;
+                return near_furn;
             }
             else{
                 throw new RuntimeException("This is not something you can open or close.");
